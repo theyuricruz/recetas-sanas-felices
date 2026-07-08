@@ -70,7 +70,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Come rico, saludable y sin complicarte con más de 1500 recetas antiinflamatorias.",
+          "Más de 1500 recetas antiinflamatorias, deliciosas y fáciles de preparar. Sin azúcar, sin gluten y bajas en carbohidratos. Acceso digital inmediato.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

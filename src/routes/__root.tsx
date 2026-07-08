@@ -81,7 +81,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Más de 1500 recetas antiinflamatorias, deliciosas y fáciles. Sin azúcar, sin gluten y bajas en carbohidratos. Material educativo.",
+          "Más de 1500 recetas antiinflamatorias, deliciosas y fáciles de preparar. Sin azúcar, sin gluten y bajas en carbohidratos. Acceso digital inmediato.",
       },
       { name: "author", content: "Recetas Antiinflamatorias" },
       {
@@ -91,10 +91,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "Come rico, saludable y sin complicarte con más de 1500 recetas antiinflamatorias.",
+          "Más de 1500 recetas antiinflamatorias, deliciosas y fáciles de preparar. Sin azúcar, sin gluten y bajas en carbohidratos. Acceso digital inmediato.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "+1500 Recetas Antiinflamatorias y Deliciosas" },
+      { name: "twitter:description", content: "Más de 1500 recetas antiinflamatorias, deliciosas y fáciles de preparar. Sin azúcar, sin gluten y bajas en carbohidratos. Acceso digital inmediato." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f5afa7d8-9184-4364-9640-e3483e5b862f/id-preview-007e2b16--0c505cf5-f9f3-46e0-92f4-7877bb145b7b.lovable.app-1783532105307.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f5afa7d8-9184-4364-9640-e3483e5b862f/id-preview-007e2b16--0c505cf5-f9f3-46e0-92f4-7877bb145b7b.lovable.app-1783532105307.png" },
     ],
     links: [
       {
@@ -107,7 +111,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=DM+Sans:wght@500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
     scripts: [
       {
