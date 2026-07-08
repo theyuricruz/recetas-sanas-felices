@@ -198,7 +198,7 @@ function Hero() {
                 size="lg"
                 className="h-14 px-10 text-base font-semibold shadow-xl shadow-primary/25 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary/30"
               >
-                Quiero acceder ahora
+                Obtener acceso
                 <ArrowRightLeft className="ml-2 h-4 w-4" />
               </Button>
               <Button
