@@ -416,7 +416,7 @@ function PorQueElegir() {
             size="lg"
             className="h-12 px-8 text-base font-semibold shadow-lg transition-transform hover:scale-105"
           >
-            Quiero empezar ahora
+            Obtener acceso
           </Button>
           <p className="text-xs text-muted-foreground">Acceso digital inmediato · Garantía de 7 días</p>
         </div>
