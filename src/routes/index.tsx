@@ -198,7 +198,7 @@ function Hero() {
                 size="lg"
                 className="h-14 px-10 text-base font-semibold shadow-xl shadow-primary/25 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary/30"
               >
-                Quiero acceder ahora
+                Obtener acceso
                 <ArrowRightLeft className="ml-2 h-4 w-4" />
               </Button>
               <Button
@@ -416,7 +416,7 @@ function PorQueElegir() {
             size="lg"
             className="h-12 px-8 text-base font-semibold shadow-lg transition-transform hover:scale-105"
           >
-            Quiero empezar ahora
+            Obtener acceso
           </Button>
           <p className="text-xs text-muted-foreground">Acceso digital inmediato · Garantía de 7 días</p>
         </div>
@@ -689,7 +689,7 @@ function Oferta() {
                 className="mt-5 h-12 w-full rounded-xl bg-gradient-to-r from-green-700 via-green-600 to-amber-500 px-4 text-xs font-bold uppercase tracking-wider text-white shadow-lg shadow-green-900/20 transition-transform hover:scale-[1.02]"
               >
                 <a href="https://pay.hotmart.com/N106642669U?off=p0feraco" target="_blank" rel="noopener noreferrer">
-                  ¡Obtener acceso completo!
+                  Obtener acceso
                 </a>
               </Button>
               <p className="mt-3 flex items-center justify-center gap-1.5 text-[10px] text-muted-foreground">
