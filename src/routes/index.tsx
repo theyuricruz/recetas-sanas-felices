@@ -689,7 +689,7 @@ function Oferta() {
                 className="mt-5 h-12 w-full rounded-xl bg-gradient-to-r from-green-700 via-green-600 to-amber-500 px-4 text-xs font-bold uppercase tracking-wider text-white shadow-lg shadow-green-900/20 transition-transform hover:scale-[1.02]"
               >
                 <a href="https://pay.hotmart.com/N106642669U?off=p0feraco" target="_blank" rel="noopener noreferrer">
-                  ¡Obtener acceso completo!
+                  Obtener acceso
                 </a>
               </Button>
               <p className="mt-3 flex items-center justify-center gap-1.5 text-[10px] text-muted-foreground">
