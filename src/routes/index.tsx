@@ -439,7 +439,7 @@ function Bonos() {
     },
     {
       icon: CalendarDays,
-      title: "Reset Antiinflamatorio de 14 Días",
+      title: "Plan Nutricional Antiinflamatorio",
       desc: "Plan simple para comenzar con más claridad, organizar los primeros días y crear una rutina alimentaria más ligera.",
       benefit: "Una estructura clara para empezar.",
       value: "$27",
@@ -563,14 +563,14 @@ function Oferta() {
     { text: "Acceso digital inmediato", included: true },
     { text: "Garantía incondicional de 7 días", included: true },
     { text: "Bono 1: Lista de Compras Antiinflamatoria", included: false },
-    { text: "Bono 2: Reset Antiinflamatorio de 14 Días", included: false },
+    { text: "Bono 2: Plan Nutricional Antiinflamatorio", included: false },
     { text: "Bono 3: Guía de Sustituciones Saludables", included: false },
   ];
 
   const premiumItems = [
     "Recetario digital con +1500 recetas",
     "Bono 1: Lista de Compras Antiinflamatoria",
-    "Bono 2: Reset Antiinflamatorio de 14 Días",
+    "Bono 2: Plan Nutricional Antiinflamatorio",
     "Bono 3: Guía de Sustituciones Saludables",
     "Acceso digital inmediato",
     "Garantía incondicional de 7 días",
