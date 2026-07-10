@@ -439,7 +439,7 @@ function Bonos() {
     },
     {
       icon: CalendarDays,
-      title: "Reset Antiinflamatorio de 14 Días",
+      title: "Plan Nutricional Antiinflamatorio",
       desc: "Plan simple para comenzar con más claridad, organizar los primeros días y crear una rutina alimentaria más ligera.",
       benefit: "Una estructura clara para empezar.",
       value: "$27",
