@@ -643,7 +643,7 @@ function Oferta() {
                 variant="outline"
                 className="mt-5 h-11 w-full rounded-xl border-black/10 bg-secondary/40 px-4 text-xs font-bold uppercase tracking-wider text-foreground hover:bg-secondary/70"
               >
-                <a href="https://pay.hotmart.com/N106642669U?off=5ofi0hvk" target="_blank" rel="noopener noreferrer">
+                <a href="https://pay.hotmart.com/N106642669U?checkoutMode=10" target="_blank" rel="noopener noreferrer">
                   Obtener Acceso Básico
                 </a>
               </Button>
@@ -688,7 +688,7 @@ function Oferta() {
                 size="sm"
                 className="mt-5 h-12 w-full rounded-xl bg-gradient-to-r from-green-700 via-green-600 to-amber-500 px-4 text-xs font-bold uppercase tracking-wider text-white shadow-lg shadow-green-900/20 transition-transform hover:scale-[1.02]"
               >
-                <a href="https://pay.hotmart.com/N106642669U?off=p0feraco" target="_blank" rel="noopener noreferrer">
+                <a href="https://pay.hotmart.com/X106687062E?checkoutMode=10" target="_blank" rel="noopener noreferrer">
                   Obtener Acceso Completo
                 </a>
               </Button>
