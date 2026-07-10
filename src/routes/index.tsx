@@ -563,7 +563,7 @@ function Oferta() {
     { text: "Acceso digital inmediato", included: true },
     { text: "Garantía incondicional de 7 días", included: true },
     { text: "Bono 1: Lista de Compras Antiinflamatoria", included: false },
-    { text: "Bono 2: Reset Antiinflamatorio de 14 Días", included: false },
+    { text: "Bono 2: Plan Nutricional Antiinflamatorio", included: false },
     { text: "Bono 3: Guía de Sustituciones Saludables", included: false },
   ];
 
