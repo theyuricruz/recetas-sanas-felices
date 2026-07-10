@@ -570,7 +570,7 @@ function Oferta() {
   const premiumItems = [
     "Recetario digital con +1500 recetas",
     "Bono 1: Lista de Compras Antiinflamatoria",
-    "Bono 2: Reset Antiinflamatorio de 14 Días",
+    "Bono 2: Plan Nutricional Antiinflamatorio",
     "Bono 3: Guía de Sustituciones Saludables",
     "Acceso digital inmediato",
     "Garantía incondicional de 7 días",
