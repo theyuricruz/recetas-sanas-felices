@@ -373,69 +373,6 @@ function QueRecibir() {
   );
 }
 
-function PorQueElegir() {
-  const benefits = [
-    { icon: Sparkles, title: "Más variedad en tu mesa", desc: "Deja de repetir siempre las mismas comidas y descubre nuevas combinaciones." },
-    { icon: CalendarDays, title: "Ideas para todos los días", desc: "Opciones saludables para desayuno, almuerzo, cena, snacks y postres." },
-    { icon: Clock, title: "Cocina más práctica", desc: "Recetas con pasos claros e ingredientes accesibles para el día a día." },
-    { icon: ChefHat, title: "Sabor sin renunciar", desc: "Come mejor sin sentir que estás a dieta ni sacrificar el placer de comer." },
-    { icon: BookOpen, title: "Alimentación organizada", desc: "Un material estructurado para planificar y decidir con más facilidad." },
-    { icon: Leaf, title: "Menos ultraprocesados", desc: "Reduce el consumo de azúcar, gluten y alimentos industriales." },
-    { icon: ShieldCheck, title: "Decisiones conscientes", desc: "Aprende a elegir mejor lo que llevas a tu plato cada día." },
-    { icon: CheckCircle2, title: "Simple y directo", desc: "Sin teorías complicadas: recetas listas para usar desde el primer día." },
-  ];
-
-  return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-secondary/40 via-background to-secondary/20 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-      <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-accent/10 blur-3xl" />
-      <div className="relative mx-auto max-w-6xl">
-        <div className="mx-auto max-w-2xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
-            <Leaf className="h-3.5 w-3.5" />
-            Hecho para tu día a día
-          </span>
-          <h2 className="mt-4 font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-            ¿Por qué elegir este material?
-          </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            No es una dieta restrictiva: es una guía práctica para incorporar recetas más saludables
-            sin complicarte y sin perder el sabor.
-          </p>
-        </div>
-
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {benefits.map((b) => (
-            <div
-              key={b.title}
-              className="group relative flex flex-col rounded-2xl border border-border/60 bg-card/80 p-6 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
-            >
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-primary/70 text-primary-foreground shadow-md shadow-primary/20 transition-transform group-hover:scale-110">
-                <b.icon className="h-5 w-5" strokeWidth={2.2} />
-              </div>
-              <h3 className="mt-4 font-heading text-base font-bold leading-snug text-foreground">
-                {b.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{b.desc}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-12 flex flex-col items-center gap-3">
-          <Button
-            onClick={scrollToOferta}
-            size="lg"
-            className="h-12 px-8 text-base font-semibold shadow-lg transition-transform hover:scale-105"
-          >
-            Obtener acceso
-          </Button>
-          <p className="text-xs text-muted-foreground">Acceso digital inmediato · Garantía de 30 días</p>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function Bonos() {
   const bonuses = [
     {
