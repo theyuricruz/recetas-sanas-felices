@@ -324,10 +324,10 @@ function QueRecibir() {
             Contenido incluido
           </span>
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            ¿Qué vas a recibir?
+            Todo lo que necesitas para <span className="text-primary">desinflamarte</span> sin vivir a dieta
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Un recetario digital completo para que nunca te falten ideas saludables en la cocina.
+            Recetas simples, ricas y organizadas para que cuidarte deje de sentirse complicado — incluso en semanas caóticas.
           </p>
         </div>
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
