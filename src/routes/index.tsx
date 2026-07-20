@@ -63,6 +63,9 @@ import realTostada from "@/assets/real-tostada.png";
 import testimonio1 from "@/assets/testimonio-1.jpg.asset.json";
 import testimonio2 from "@/assets/testimonio-2.jpg.asset.json";
 import testimonio3 from "@/assets/testimonio-3.jpg.asset.json";
+import testimonioValentina from "@/assets/testimonio-valentina.avif.asset.json";
+import testimonioDaniela from "@/assets/testimonio-daniela.avif.asset.json";
+import testimonioCarolina from "@/assets/testimonio-carolina.avif.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
