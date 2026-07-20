@@ -567,6 +567,8 @@ function Countdown() {
 }
 
 function Oferta() {
+  const [openUpsell, setOpenUpsell] = useState(false);
+
   const basicItems = [
     { text: "Recetario 500 recetas antiinflamatorias", included: true },
     { text: "Acceso digital inmediato", included: true },
