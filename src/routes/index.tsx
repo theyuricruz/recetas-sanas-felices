@@ -508,6 +508,19 @@ function Countdown() {
 
 function Oferta() {
   const [openUpsell, setOpenUpsell] = useState(false);
+  const [upsellTimeLeft, setUpsellTimeLeft] = useState(5 * 60);
+
+  useEffect(() => {
+    if (!openUpsell) return;
+    setUpsellTimeLeft(5 * 60);
+    const interval = setInterval(() => {
+      setUpsellTimeLeft((prev) => (prev > 0 ? prev - 1 : 0));
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [openUpsell]);
+
+  const upsellMinutes = Math.floor(upsellTimeLeft / 60);
+  const upsellSeconds = upsellTimeLeft % 60;
 
   const basicItems = [
     { text: "Recetario 500 recetas antiinflamatorias", included: true },
@@ -658,10 +671,16 @@ function Oferta() {
               Oportunidad única
             </span>
             <DialogHeader className="mt-2 text-center">
-              <DialogTitle className="text-xl font-bold text-white">
-                ¡Espera! No te vayas con el básico
+              <DialogTitle className="text-xl font-bold leading-tight text-white">
+                ¡Espera! Por $4.90 más, llevas 3x más recetas y los 3 bonos
               </DialogTitle>
             </DialogHeader>
+            <div className="mt-3 inline-flex items-center gap-1.5 rounded-lg bg-white/15 px-3 py-1.5 backdrop-blur-sm">
+              <Clock className="h-3.5 w-3.5" />
+              <span className="text-xs font-semibold tabular-nums">
+                {String(upsellMinutes).padStart(2, "0")}:{String(upsellSeconds).padStart(2, "0")}
+              </span>
+            </div>
           </div>
           <div className="px-5 pb-6 pt-4 text-center">
             <DialogDescription className="text-sm text-muted-foreground">
@@ -672,6 +691,17 @@ function Oferta() {
               <span className="text-4xl font-extrabold tracking-tight text-green-700">$9.90</span>
             </div>
             <p className="text-[11px] text-muted-foreground">pago único</p>
+
+            <div className="mt-3 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2.5 text-center dark:border-amber-900/40 dark:bg-amber-900/20">
+              <p className="text-xs font-bold text-amber-800 dark:text-amber-200">
+                500 recetas → 1.500 recetas + 3 bonos exclusivos
+              </p>
+            </div>
+
+            <p className="mt-3 flex items-center justify-center gap-1 text-[11px] font-semibold text-red-600">
+              <Clock className="h-3.5 w-3.5" />
+              Esta oferta desaparece cuando cierres esta ventana
+            </p>
 
             <ul className="mt-4 space-y-1.5 text-left text-xs text-foreground">
               <li className="flex items-start gap-2">
