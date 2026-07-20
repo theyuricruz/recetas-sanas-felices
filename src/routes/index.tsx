@@ -426,7 +426,7 @@ function PorQueElegir() {
           >
             Obtener acceso
           </Button>
-          <p className="text-xs text-muted-foreground">Acceso digital inmediato · Garantía de 7 días</p>
+          <p className="text-xs text-muted-foreground">Acceso digital inmediato · Garantía de 30 días</p>
         </div>
       </div>
     </section>
@@ -571,7 +571,7 @@ function Oferta() {
   const basicItems = [
     { text: "Recetario 500 recetas antiinflamatorias", included: true },
     { text: "Acceso digital inmediato", included: true },
-    { text: "Garantía incondicional de 7 días", included: true },
+    { text: "Garantía incondicional de 30 días", included: true },
     { text: "Bono 1: Lista de Compras Antiinflamatoria", included: false },
     { text: "Bono 2: Plan Nutricional Antiinflamatorio", included: false },
     { text: "Bono 3: Guía de Sustituciones Saludables", included: false },
@@ -583,7 +583,7 @@ function Oferta() {
     "Bono 2: Plan Nutricional Antiinflamatorio",
     "Bono 3: Guía de Sustituciones Saludables",
     "Acceso digital inmediato",
-    "Garantía incondicional de 7 días",
+    "Garantía incondicional de 30 días",
   ];
 
   return (
@@ -702,7 +702,7 @@ function Oferta() {
               </Button>
               <p className="mt-3 flex items-center justify-center gap-1.5 text-[10px] text-muted-foreground">
                 <ShieldCheck className="h-3 w-3" />
-                Compra 100% segura · Garantía de 7 días
+                Compra 100% segura · Garantía de 30 días
               </p>
             </div>
           </div>
@@ -774,7 +774,7 @@ function Oferta() {
             </div>
             <p className="mt-3 flex items-center justify-center gap-1.5 text-[10px] text-muted-foreground">
               <ShieldCheck className="h-3 w-3" />
-              Compra 100% segura · Garantía de 7 días
+              Compra 100% segura · Garantía de 30 días
             </p>
           </div>
         </DialogContent>
@@ -1000,7 +1000,7 @@ function Garantia() {
   const bullets = [
     { icon: Lock, text: "Pago protegido con encriptación segura" },
     { icon: ShieldCheck, text: "Tu información nunca es compartida con terceros" },
-    { icon: Clock, text: "7 días completos para probar todo el material" },
+    { icon: Clock, text: "30 días completos para probar todo el material" },
     { icon: CheckCircle2, text: "Devolución simple: solo escríbenos y te reembolsamos" },
   ];
 
@@ -1024,7 +1024,7 @@ function Garantia() {
             </div>
 
             <h2 className="mt-5 font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
-              Garantía incondicional de 7 días
+              Garantía incondicional de 30 días
             </h2>
             <p className="mt-3 max-w-xl text-base leading-relaxed text-muted-foreground">
               Accede al material, revísalo con calma y si sientes que no es para ti, te devolvemos
