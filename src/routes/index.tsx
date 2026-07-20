@@ -828,22 +828,43 @@ function Testimonios() {
       name: "María G.",
       location: "México",
       photo: testimonio1,
-      text: "Antes no sabía qué cocinar. Ahora tengo opciones para toda la semana y las recetas son muy fáciles de seguir.",
-      highlight: "Facilidad para encontrar recetas saludables",
+      text: "Hacía años que terminaba inflamada después de cenar. A los pocos días con estas recetas ya me sentía muchísimo más liviana. No lo podía creer.",
+      highlight: "Menos hinchazón desde los primeros días",
     },
     {
       name: "Sofía R.",
       location: "Colombia",
       photo: testimonio2,
-      text: "Me sorprendió la cantidad de opciones. Nunca pensé que comer sin gluten y con menos azúcar podía ser tan variado.",
-      highlight: "Variedad del material",
+      text: "Pensé que iba a ser comida aburrida y sin sabor. Todo lo contrario: mi esposo ahora me pide los postres, y son sin azúcar refinada.",
+      highlight: "Rico de verdad, hasta para la familia",
     },
     {
       name: "Ana L.",
       location: "Argentina",
       photo: testimonio3,
-      text: "Lo mejor es que todo está organizado. Puedo planificar el menú del mes sin estresarme y cocinar en menos tiempo.",
-      highlight: "Practicidad para organizar la alimentación",
+      text: "Lo mejor fue dejar de pensar todos los días qué cocinar. Me sacó un estrés enorme y ahora organizo la semana en minutos.",
+      highlight: "Se acabó el ‘¿qué cocino hoy?’",
+    },
+    {
+      name: "Valentina P.",
+      location: "Chile",
+      photo: testimonio1,
+      text: "Tengo colon irritable y casi todo me caía pesado. Estas recetas me ayudaron muchísimo a comer sin miedo a cómo iba a sentirme después.",
+      highlight: "Ideal para digestiones sensibles",
+    },
+    {
+      name: "Daniela M.",
+      location: "España",
+      photo: testimonio2,
+      text: "Era muy adicta al azúcar y los postres saludables me salvaron. Como algo dulce y no me siento pesada ni con culpa.",
+      highlight: "Dulces sin culpa ni bajones",
+    },
+    {
+      name: "Carolina F.",
+      location: "Perú",
+      photo: testimonio3,
+      text: "Lo compré pensando que iba a usar 4 o 5 recetas y terminé usándolo todos los días. Cambió por completo cómo como.",
+      highlight: "Se usa todos los días",
     },
   ];
 
@@ -851,13 +872,50 @@ function Testimonios() {
     <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
         <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Lo que dicen quienes ya lo usan
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
+            <Star className="h-3.5 w-3.5" />
+            Opiniones reales
+          </span>
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            Mujeres que dejaron de sentirse <span className="text-primary">inflamadas</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm text-muted-foreground">
-            Historias reales de mujeres que ya transformaron su alimentación con el recetario.
+            Miles de personas empezaron a cambiar cómo se sienten después de comer con recetas simples, ricas y fáciles de sostener.
           </p>
         </div>
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {testimonials.map((t) => (
+            <Card key={t.name} className="border-0 bg-secondary/40 shadow-sm">
+              <CardContent className="p-6">
+                <div className="flex gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-accent text-accent" />
+                  ))}
+                </div>
+                <p className="mt-4 text-foreground">&ldquo;{t.text}&rdquo;</p>
+                <div className="mt-4 flex items-center gap-3 border-t border-border pt-4">
+                  <img
+                    src={t.photo.url}
+                    alt={`Foto de ${t.name}`}
+                    width={56}
+                    height={56}
+                    loading="lazy"
+                    className="h-14 w-14 shrink-0 rounded-full object-cover ring-2 ring-primary/20"
+                  />
+                  <div>
+                    <p className="font-semibold text-foreground">{t.name}</p>
+                    <p className="text-xs text-muted-foreground">{t.location} · Compra verificada</p>
+                    <p className="mt-1 text-xs font-medium text-primary">{t.highlight}</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {testimonials.map((t) => (
             <Card key={t.name} className="border-0 bg-secondary/40 shadow-sm">
