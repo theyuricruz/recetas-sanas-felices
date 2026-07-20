@@ -84,6 +84,8 @@ function Index() {
     <main className="min-h-screen bg-background">
       <PromoBar />
       <Hero />
+      <DoloresComunes />
+      <Comparacion />
       <QueRecibir />
       <PorQueElegir />
       <Bonos />
