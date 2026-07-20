@@ -105,6 +105,7 @@ function Index() {
       <Garantia />
       <PreguntasFrecuentes />
       <Footer />
+      <PurchaseNotifications />
     </main>
   );
 }
