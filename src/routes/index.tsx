@@ -40,6 +40,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 
 import coverProducto from "@/assets/cover-producto.jpg";
 import heroMockup from "@/assets/hero-mockup.png";
@@ -560,6 +567,8 @@ function Countdown() {
 }
 
 function Oferta() {
+  const [openUpsell, setOpenUpsell] = useState(false);
+
   const basicItems = [
     { text: "Recetario 500 recetas antiinflamatorias", included: true },
     { text: "Acceso digital inmediato", included: true },
@@ -640,14 +649,12 @@ function Oferta() {
                 ))}
               </ul>
               <Button
-                asChild
                 size="sm"
                 variant="outline"
                 className="mt-5 h-11 w-full rounded-xl border-black/10 bg-secondary/40 px-4 text-xs font-bold uppercase tracking-wider text-foreground hover:bg-secondary/70"
+                onClick={() => setOpenUpsell(true)}
               >
-                <a href="https://pay.hotmart.com/N106642669U?checkoutMode=10" target="_blank" rel="noopener noreferrer">
-                  Obtener Acceso Básico
-                </a>
+                Obtener Acceso Básico
               </Button>
             </div>
           </div>
@@ -702,6 +709,77 @@ function Oferta() {
           </div>
         </div>
       </div>
+
+      {/* Upsell popup for basic plan click */}
+      <Dialog open={openUpsell} onOpenChange={setOpenUpsell}>
+        <DialogContent className="max-w-sm border-0 p-0 sm:rounded-2xl">
+          <div className="relative overflow-hidden rounded-t-2xl bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 px-5 py-4 text-center text-white">
+            <span className="inline-block rounded-full bg-white/20 px-3 py-1 text-[10px] font-bold uppercase tracking-wider backdrop-blur-sm">
+              Oportunidad única
+            </span>
+            <DialogHeader className="mt-2 text-center">
+              <DialogTitle className="text-xl font-bold text-white">
+                ¡Espera! No te vayas con el básico
+              </DialogTitle>
+            </DialogHeader>
+          </div>
+          <div className="px-5 pb-6 pt-4 text-center">
+            <DialogDescription className="text-sm text-muted-foreground">
+              Antes de elegir el plan básico, puedes acceder al <strong className="text-foreground">plan completo</strong> con todos los bonos por solo:
+            </DialogDescription>
+            <div className="mt-4 flex items-center justify-center gap-2">
+              <span className="text-lg font-semibold text-red-500 line-through decoration-red-500/80">$15</span>
+              <span className="text-4xl font-extrabold tracking-tight text-green-700">$9.90</span>
+            </div>
+            <p className="text-[11px] text-muted-foreground">pago único</p>
+
+            <ul className="mt-4 space-y-1.5 text-left text-xs text-foreground">
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-green-600" />
+                Recetario completo antiinflamatorio
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-green-600" />
+                Bono 1: Lista de Compras Antiinflamatoria
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-green-600" />
+                Bono 2: Plan Nutricional Antiinflamatorio
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-green-600" />
+                Bono 3: Guía de Sustituciones Saludables
+              </li>
+            </ul>
+
+            <div className="mt-5 space-y-2">
+              <Button
+                asChild
+                size="sm"
+                className="h-12 w-full rounded-xl bg-gradient-to-r from-green-700 via-green-600 to-amber-500 text-xs font-bold uppercase tracking-wider text-white shadow-lg shadow-green-900/20 transition-transform hover:scale-[1.02]"
+              >
+                <a href="https://pay.hotmart.com/X106687062E?off=g05ticx5" target="_blank" rel="noopener noreferrer" onClick={() => setOpenUpsell(false)}>
+                  Sí, quiero el Acceso Completo por $9.90
+                </a>
+              </Button>
+              <Button
+                asChild
+                size="sm"
+                variant="ghost"
+                className="h-10 w-full text-[11px] font-semibold text-muted-foreground hover:text-foreground"
+              >
+                <a href="https://pay.hotmart.com/N106642669U?checkoutMode=10" target="_blank" rel="noopener noreferrer" onClick={() => setOpenUpsell(false)}>
+                  No, quiero el Acceso Básico por $5
+                </a>
+              </Button>
+            </div>
+            <p className="mt-3 flex items-center justify-center gap-1.5 text-[10px] text-muted-foreground">
+              <ShieldCheck className="h-3 w-3" />
+              Compra 100% segura · Garantía de 7 días
+            </p>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
 
   );
