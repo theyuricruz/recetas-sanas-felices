@@ -97,7 +97,7 @@ function Index() {
       <DoloresComunes />
       <Comparacion />
       <QueRecibir />
-      <PorQueElegir />
+      
       <Bonos />
       <Oferta />
       <Ejemplos />
