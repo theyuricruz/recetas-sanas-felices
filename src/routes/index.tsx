@@ -649,14 +649,12 @@ function Oferta() {
                 ))}
               </ul>
               <Button
-                asChild
                 size="sm"
                 variant="outline"
                 className="mt-5 h-11 w-full rounded-xl border-black/10 bg-secondary/40 px-4 text-xs font-bold uppercase tracking-wider text-foreground hover:bg-secondary/70"
+                onClick={() => setOpenUpsell(true)}
               >
-                <a href="https://pay.hotmart.com/N106642669U?checkoutMode=10" target="_blank" rel="noopener noreferrer">
-                  Obtener Acceso Básico
-                </a>
+                Obtener Acceso Básico
               </Button>
             </div>
           </div>
