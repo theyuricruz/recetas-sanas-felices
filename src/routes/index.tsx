@@ -60,9 +60,9 @@ import guiaSustituciones from "@/assets/guia-sustituciones.jpg";
 import realAlmuerzosCenas from "@/assets/real-almuerzos-cenas.png";
 import realQuesoHuevo from "@/assets/real-queso-huevo.png";
 import realTostada from "@/assets/real-tostada.png";
-import testimonio1 from "@/assets/testimonio-1.jpg.asset.json";
-import testimonio2 from "@/assets/testimonio-2.jpg.asset.json";
-import testimonio3 from "@/assets/testimonio-3.jpg.asset.json";
+import avatarMaria from "@/assets/avatar-maria.png";
+import avatarSofia from "@/assets/avatar-sofia.png";
+import avatarAna from "@/assets/avatar-ana.png";
 import avatarValentina from "@/assets/avatar-valentina.png";
 import avatarDaniela from "@/assets/avatar-daniela.png";
 import avatarCarolina from "@/assets/avatar-carolina.png";
@@ -845,21 +845,21 @@ function Testimonios() {
     {
       name: "María G.",
       location: "México",
-      photo: testimonio1,
+      photo: avatarMaria,
       text: "En 5 días bajé 2 kilos, dormía mejor y ya no me levantaba con la panza hinchada. Nunca pensé que solo cambiando lo que comía iba a sentirme tan distinta.",
       highlight: "-2 kg y menos hinchazón en 5 días",
     },
     {
       name: "Sofía R.",
       location: "Colombia",
-      photo: testimonio2,
+      photo: avatarSofia,
       text: "A la primera semana ya no sentía ese cansancio de las tardes. Mi esposo me pide los postres y ni sabe que son sin azúcar refinada.",
       highlight: "Más energía toda la tarde",
     },
     {
       name: "Ana L.",
       location: "Argentina",
-      photo: testimonio3,
+      photo: avatarAna,
       text: "En 10 días desinflamé la cara y el abdomen. Dejé de pensar todos los días qué cocinar y organizo la semana en 10 minutos.",
       highlight: "Cara y abdomen desinflamados en 10 días",
     },
@@ -913,7 +913,7 @@ function Testimonios() {
                 <p className="mt-4 text-foreground">&ldquo;{t.text}&rdquo;</p>
                 <div className="mt-4 flex items-center gap-3 border-t border-border pt-4">
                   <img
-                    src={typeof t.photo === "string" ? t.photo : t.photo.url}
+                    src={t.photo}
                     alt={`Foto de ${t.name}`}
                     width={56}
                     height={56}
