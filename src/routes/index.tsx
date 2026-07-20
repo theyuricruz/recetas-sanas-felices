@@ -561,7 +561,7 @@ function Countdown() {
 
 function Oferta() {
   const basicItems = [
-    { text: "Recetario 1500 recetas antiinflamatorias", included: true },
+    { text: "Recetario 500 recetas antiinflamatorias", included: true },
     { text: "Acceso digital inmediato", included: true },
     { text: "Garantía incondicional de 7 días", included: true },
     { text: "Bono 1: Lista de Compras Antiinflamatoria", included: false },
@@ -614,7 +614,7 @@ function Oferta() {
             {/* Price */}
             <div className="px-5 pt-5 text-center">
               <div className="flex items-baseline justify-center gap-2">
-                <span className="text-lg font-semibold text-red-500 line-through decoration-red-500/80">$27</span>
+                <span className="text-lg font-semibold text-red-500 line-through decoration-red-500/80">$9.90</span>
                 <span className="text-4xl font-extrabold tracking-tight text-foreground">$5</span>
               </div>
               <p className="mt-1 text-[11px] font-medium text-muted-foreground">pago único</p>
