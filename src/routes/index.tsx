@@ -1081,3 +1081,147 @@ function Footer() {
     </footer>
   );
 }
+
+function DoloresComunes() {
+  const dolores = [
+    {
+      emoji: "🤰",
+      text: (
+        <>
+          ¿Terminas de comer y sientes la panza <strong>pesada o hinchada</strong>, incluso cuando intentas cuidarte?
+        </>
+      ),
+    },
+    {
+      emoji: "😣",
+      text: (
+        <>
+          ¿Quieres comer mejor pero ya no sabes <strong>qué cocinar</strong> para sentirte bien?
+        </>
+      ),
+    },
+    {
+      emoji: "😤",
+      text: (
+        <>
+          ¿Sientes que haces el esfuerzo de cuidarte pero sigues con <strong>falta de energía y pesadez</strong>?
+        </>
+      ),
+    },
+    {
+      emoji: "😰",
+      text: (
+        <>
+          ¿Empiezas a comer saludable… pero terminas abandonando porque no es práctico ni sostenible?
+        </>
+      ),
+    },
+    {
+      emoji: "🍬",
+      text: (
+        <>
+          ¿Terminas comiendo cualquier cosa por <strong>ansiedad, cansancio o falta de ideas</strong>?
+        </>
+      ),
+    },
+  ];
+
+  return (
+    <section className="relative overflow-hidden bg-gradient-to-b from-background via-secondary/20 to-background px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-5xl">
+        <div className="text-center">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
+            ¿Te suena familiar?
+          </span>
+          <h2 className="mt-4 font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+            El problema no es tu <span className="text-primary">falta de voluntad</span>
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+            Es sentirte inflamada después de comer, no saber qué cocinar y terminar cansada de intentar cuidarte sin ver cambios reales.
+          </p>
+        </div>
+
+        <ul className="mt-12 grid gap-4 sm:grid-cols-2">
+          {dolores.map((d, i) => (
+            <li
+              key={i}
+              className="flex items-start gap-4 rounded-2xl border border-border/60 bg-card/80 p-5 shadow-sm backdrop-blur transition-all hover:-translate-y-1 hover:shadow-md"
+            >
+              <span className="text-3xl leading-none">{d.emoji}</span>
+              <p className="text-base leading-relaxed text-foreground">{d.text}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+function Comparacion() {
+  const malos = [
+    "Son difíciles de sostener y terminas abandonando.",
+    "Te dejan sin ideas y pensando todo el día en comida.",
+    "Generan ansiedad y sensación de restricción constante.",
+    "Terminas volviendo a los mismos hábitos de siempre.",
+  ];
+  const buenos = [
+    "Recetas fáciles, rápidas y deliciosas para el día a día.",
+    "Ingredientes simples y comidas que realmente vas a disfrutar.",
+    "Menos hinchazón, más liviandad y más energía natural.",
+    "Una forma sostenible de sentirte mejor sin vivir a dieta.",
+  ];
+
+  return (
+    <section className="relative overflow-hidden bg-gradient-to-b from-secondary/20 via-background to-secondary/30 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-2xl text-center">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
+            <Sparkles className="h-3.5 w-3.5" />
+            La diferencia está acá
+          </span>
+          <h2 className="mt-4 font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+            La solución no está en hacer <span className="line-through decoration-red-500/80">dieta</span>
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Está en tener recetas simples, organizadas y ricas que puedas sostener incluso en semanas caóticas — sin pasar hambre ni sentir que estás haciendo sacrificios.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
+          {/* Bad column */}
+          <div className="rounded-3xl border border-red-200/60 bg-red-50/40 p-6 sm:p-8">
+            <div className="flex items-center gap-3">
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-red-100 text-xl">❌</span>
+              <h3 className="text-lg font-bold text-foreground">Dietas extremas</h3>
+            </div>
+            <ul className="mt-5 space-y-3">
+              {malos.map((m) => (
+                <li key={m} className="flex items-start gap-3">
+                  <XCircle className="mt-0.5 h-5 w-5 shrink-0 text-red-500" strokeWidth={2.4} />
+                  <span className="text-sm leading-relaxed text-foreground/90">{m}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Good column */}
+          <div className="rounded-3xl border border-emerald-200/60 bg-emerald-50/50 p-6 shadow-lg shadow-emerald-900/5 sm:p-8">
+            <div className="flex items-center gap-3">
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-emerald-100 text-xl">✅</span>
+              <h3 className="text-lg font-bold text-foreground">Alimentación antiinflamatoria práctica</h3>
+            </div>
+            <ul className="mt-5 space-y-3">
+              {buenos.map((b) => (
+                <li key={b} className="flex items-start gap-3">
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" strokeWidth={2.4} />
+                  <span className="text-sm leading-relaxed text-foreground/90">{b}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
