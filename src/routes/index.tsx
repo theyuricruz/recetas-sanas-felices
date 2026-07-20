@@ -40,6 +40,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 
 import coverProducto from "@/assets/cover-producto.jpg";
 import heroMockup from "@/assets/hero-mockup.png";
