@@ -1243,3 +1243,84 @@ function Comparacion() {
   );
 }
 
+function PurchaseNotifications() {
+  const buyers = [
+    { name: "Camila", location: "Ciudad de México, México" },
+    { name: "Valentina", location: "Santiago, Chile" },
+    { name: "Sofía", location: "Bogotá, Colombia" },
+    { name: "Martina", location: "Buenos Aires, Argentina" },
+    { name: "Isabella", location: "Lima, Perú" },
+    { name: "Lucía", location: "Montevideo, Uruguay" },
+    { name: "Daniela", location: "Quito, Ecuador" },
+    { name: "Antonella", location: "Guayaquil, Ecuador" },
+    { name: "Fernanda", location: "Guadalajara, México" },
+    { name: "Mariana", location: "Medellín, Colombia" },
+    { name: "Renata", location: "San José, Costa Rica" },
+    { name: "Gabriela", location: "Asunción, Paraguay" },
+    { name: "Ximena", location: "La Paz, Bolivia" },
+    { name: "Paula", location: "Rosario, Argentina" },
+    { name: "Andrea", location: "Ciudad de Panamá, Panamá" },
+    { name: "Julieta", location: "Córdoba, Argentina" },
+    { name: "Natalia", location: "Cali, Colombia" },
+    { name: "Regina", location: "Monterrey, México" },
+    { name: "Emilia", location: "Viña del Mar, Chile" },
+    { name: "Carolina", location: "Arequipa, Perú" },
+  ];
+
+  const [current, setCurrent] = useState<{ name: string; location: string; minutes: number } | null>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    let showTimer: ReturnType<typeof setTimeout>;
+    let hideTimer: ReturnType<typeof setTimeout>;
+    let cycleTimer: ReturnType<typeof setTimeout>;
+
+    const show = () => {
+      const b = buyers[Math.floor(Math.random() * buyers.length)];
+      const minutes = Math.floor(Math.random() * 9) + 1;
+      setCurrent({ ...b, minutes });
+      setVisible(true);
+      hideTimer = setTimeout(() => setVisible(false), 6000);
+      cycleTimer = setTimeout(show, 17000);
+    };
+
+    showTimer = setTimeout(show, 8000);
+
+    return () => {
+      clearTimeout(showTimer);
+      clearTimeout(hideTimer);
+      clearTimeout(cycleTimer);
+    };
+  }, []);
+
+  if (!current) return null;
+
+  return (
+    <div
+      className={`fixed bottom-4 left-4 z-50 max-w-xs transition-all duration-500 ${
+        visible ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"
+      }`}
+      role="status"
+      aria-live="polite"
+    >
+      <div className="flex items-start gap-3 rounded-xl border border-border/60 bg-card/95 p-3 shadow-xl backdrop-blur">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
+          <ShoppingCart className="h-5 w-5" strokeWidth={2.4} />
+        </div>
+        <div className="flex-1 text-xs leading-snug">
+          <p className="font-semibold text-foreground">
+            {current.name} de {current.location}
+          </p>
+          <p className="mt-0.5 text-muted-foreground">
+            acaba de obtener acceso al recetario
+          </p>
+          <p className="mt-1 flex items-center gap-1 text-[11px] text-emerald-700">
+            <CheckCircle2 className="h-3 w-3" /> Compra verificada · hace {current.minutes} min
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
