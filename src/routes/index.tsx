@@ -916,39 +916,8 @@ function Testimonios() {
     </section>
   );
 }
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {testimonials.map((t) => (
-            <Card key={t.name} className="border-0 bg-secondary/40 shadow-sm">
-              <CardContent className="p-6">
-                <div className="flex gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-accent text-accent" />
-                  ))}
-                </div>
-                <p className="mt-4 text-foreground">&ldquo;{t.text}&rdquo;</p>
-                <div className="mt-4 flex items-center gap-3 border-t border-border pt-4">
-                  <img
-                    src={t.photo.url}
-                    alt={`Foto de ${t.name}`}
-                    width={56}
-                    height={56}
-                    loading="lazy"
-                    className="h-14 w-14 shrink-0 rounded-full object-cover ring-2 ring-primary/20"
-                  />
-                  <div>
-                    <p className="font-semibold text-foreground">{t.name}</p>
-                    <p className="text-xs text-muted-foreground">{t.location}</p>
-                    <p className="mt-1 text-xs font-medium text-primary">{t.highlight}</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+
+
 
 function Garantia() {
   const bullets = [
