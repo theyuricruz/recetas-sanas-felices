@@ -166,18 +166,18 @@ function Hero() {
 
             {/* Small pre-title */}
             <p className="mt-6 text-sm font-medium uppercase tracking-widest text-muted-foreground sm:text-base">
-              Come rico, saludable y sin complicarte con
+              Adiós a la hinchazón, la pesadez y la falta de energía
             </p>
 
             {/* Premium headline with serif font */}
             <h1 className="mt-3 text-[2.5rem] font-semibold leading-[1.1] tracking-tight text-foreground sm:text-5xl lg:text-6xl" style={{ fontFamily: "var(--font-heading-premium)" }}>
-              <span className="text-primary">+1500 recetas</span> antiinflamatorias y deliciosas
+              Come rico, siéntete <span className="text-primary">liviana</span> y deja de sufrir pensando qué cocinar
             </h1>
 
             {/* Refined subtitle */}
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground sm:text-xl">
-              Opciones sin azúcar, sin gluten y bajas en carbohidratos para cada momento del día.
-              Todo organizado, listo para usar y diseñado para quienes quieren sentirse mejor.
+              Más de <strong className="text-foreground">1500 recetas antiinflamatorias</strong> sin azúcar, sin gluten y fáciles de preparar,
+              pensadas para desinflamarte desde los primeros días — incluso en semanas con poco tiempo.
             </p>
 
             {/* Social proof row */}
