@@ -63,6 +63,9 @@ import realTostada from "@/assets/real-tostada.png";
 import testimonio1 from "@/assets/testimonio-1.jpg.asset.json";
 import testimonio2 from "@/assets/testimonio-2.jpg.asset.json";
 import testimonio3 from "@/assets/testimonio-3.jpg.asset.json";
+import testimonioValentina from "@/assets/testimonio-valentina.avif.asset.json";
+import testimonioDaniela from "@/assets/testimonio-daniela.avif.asset.json";
+import testimonioCarolina from "@/assets/testimonio-carolina.avif.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -94,7 +97,7 @@ function Index() {
       <DoloresComunes />
       <Comparacion />
       <QueRecibir />
-      <PorQueElegir />
+      
       <Bonos />
       <Oferta />
       <Ejemplos />
@@ -102,6 +105,7 @@ function Index() {
       <Garantia />
       <PreguntasFrecuentes />
       <Footer />
+      <PurchaseNotifications />
     </main>
   );
 }
@@ -364,69 +368,6 @@ function QueRecibir() {
               </div>
             </div>
           ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function PorQueElegir() {
-  const benefits = [
-    { icon: Sparkles, title: "Más variedad en tu mesa", desc: "Deja de repetir siempre las mismas comidas y descubre nuevas combinaciones." },
-    { icon: CalendarDays, title: "Ideas para todos los días", desc: "Opciones saludables para desayuno, almuerzo, cena, snacks y postres." },
-    { icon: Clock, title: "Cocina más práctica", desc: "Recetas con pasos claros e ingredientes accesibles para el día a día." },
-    { icon: ChefHat, title: "Sabor sin renunciar", desc: "Come mejor sin sentir que estás a dieta ni sacrificar el placer de comer." },
-    { icon: BookOpen, title: "Alimentación organizada", desc: "Un material estructurado para planificar y decidir con más facilidad." },
-    { icon: Leaf, title: "Menos ultraprocesados", desc: "Reduce el consumo de azúcar, gluten y alimentos industriales." },
-    { icon: ShieldCheck, title: "Decisiones conscientes", desc: "Aprende a elegir mejor lo que llevas a tu plato cada día." },
-    { icon: CheckCircle2, title: "Simple y directo", desc: "Sin teorías complicadas: recetas listas para usar desde el primer día." },
-  ];
-
-  return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-secondary/40 via-background to-secondary/20 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-      <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-accent/10 blur-3xl" />
-      <div className="relative mx-auto max-w-6xl">
-        <div className="mx-auto max-w-2xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
-            <Leaf className="h-3.5 w-3.5" />
-            Hecho para tu día a día
-          </span>
-          <h2 className="mt-4 font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-            ¿Por qué elegir este material?
-          </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            No es una dieta restrictiva: es una guía práctica para incorporar recetas más saludables
-            sin complicarte y sin perder el sabor.
-          </p>
-        </div>
-
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {benefits.map((b) => (
-            <div
-              key={b.title}
-              className="group relative flex flex-col rounded-2xl border border-border/60 bg-card/80 p-6 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
-            >
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-primary/70 text-primary-foreground shadow-md shadow-primary/20 transition-transform group-hover:scale-110">
-                <b.icon className="h-5 w-5" strokeWidth={2.2} />
-              </div>
-              <h3 className="mt-4 font-heading text-base font-bold leading-snug text-foreground">
-                {b.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{b.desc}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-12 flex flex-col items-center gap-3">
-          <Button
-            onClick={scrollToOferta}
-            size="lg"
-            className="h-12 px-8 text-base font-semibold shadow-lg transition-transform hover:scale-105"
-          >
-            Obtener acceso
-          </Button>
-          <p className="text-xs text-muted-foreground">Acceso digital inmediato · Garantía de 30 días</p>
         </div>
       </div>
     </section>
@@ -905,43 +846,43 @@ function Testimonios() {
       name: "María G.",
       location: "México",
       photo: testimonio1,
-      text: "Hacía años que terminaba inflamada después de cenar. A los pocos días con estas recetas ya me sentía muchísimo más liviana. No lo podía creer.",
-      highlight: "Menos hinchazón desde los primeros días",
+      text: "En 5 días bajé 2 kilos, dormía mejor y ya no me levantaba con la panza hinchada. Nunca pensé que solo cambiando lo que comía iba a sentirme tan distinta.",
+      highlight: "-2 kg y menos hinchazón en 5 días",
     },
     {
       name: "Sofía R.",
       location: "Colombia",
       photo: testimonio2,
-      text: "Pensé que iba a ser comida aburrida y sin sabor. Todo lo contrario: mi esposo ahora me pide los postres, y son sin azúcar refinada.",
-      highlight: "Rico de verdad, hasta para la familia",
+      text: "A la primera semana ya no sentía ese cansancio de las tardes. Mi esposo me pide los postres y ni sabe que son sin azúcar refinada.",
+      highlight: "Más energía toda la tarde",
     },
     {
       name: "Ana L.",
       location: "Argentina",
       photo: testimonio3,
-      text: "Lo mejor fue dejar de pensar todos los días qué cocinar. Me sacó un estrés enorme y ahora organizo la semana en minutos.",
-      highlight: "Se acabó el ‘¿qué cocino hoy?’",
+      text: "En 10 días desinflamé la cara y el abdomen. Dejé de pensar todos los días qué cocinar y organizo la semana en 10 minutos.",
+      highlight: "Cara y abdomen desinflamados en 10 días",
     },
     {
       name: "Valentina P.",
       location: "Chile",
-      photo: testimonio1,
-      text: "Tengo colon irritable y casi todo me caía pesado. Estas recetas me ayudaron muchísimo a comer sin miedo a cómo iba a sentirme después.",
-      highlight: "Ideal para digestiones sensibles",
+      photo: testimonioValentina,
+      text: "Tengo colon irritable y en menos de 2 semanas dejé de tener esos dolores después de comer. Es la primera vez que como tranquila.",
+      highlight: "Sin dolores en menos de 2 semanas",
     },
     {
       name: "Daniela M.",
-      location: "España",
-      photo: testimonio2,
-      text: "Era muy adicta al azúcar y los postres saludables me salvaron. Como algo dulce y no me siento pesada ni con culpa.",
-      highlight: "Dulces sin culpa ni bajones",
+      location: "Uruguay",
+      photo: testimonioDaniela,
+      text: "En 7 días bajé 1,5 kg sin pasar hambre y se me quitó la ansiedad por el dulce. Ahora como algo dulce sin culpa y sin bajones.",
+      highlight: "-1,5 kg en 7 días, sin ansiedad",
     },
     {
       name: "Carolina F.",
       location: "Perú",
-      photo: testimonio3,
-      text: "Lo compré pensando que iba a usar 4 o 5 recetas y terminé usándolo todos los días. Cambió por completo cómo como.",
-      highlight: "Se usa todos los días",
+      photo: testimonioCarolina,
+      text: "A las 3 semanas mi piel se veía distinta, menos hinchada y con más brillo. Uso el recetario todos los días, cambió por completo cómo como.",
+      highlight: "Piel más limpia en 3 semanas",
     },
   ];
 
@@ -1301,4 +1242,85 @@ function Comparacion() {
     </section>
   );
 }
+
+function PurchaseNotifications() {
+  const buyers = [
+    { name: "Camila", location: "Ciudad de México, México" },
+    { name: "Valentina", location: "Santiago, Chile" },
+    { name: "Sofía", location: "Bogotá, Colombia" },
+    { name: "Martina", location: "Buenos Aires, Argentina" },
+    { name: "Isabella", location: "Lima, Perú" },
+    { name: "Lucía", location: "Montevideo, Uruguay" },
+    { name: "Daniela", location: "Quito, Ecuador" },
+    { name: "Antonella", location: "Guayaquil, Ecuador" },
+    { name: "Fernanda", location: "Guadalajara, México" },
+    { name: "Mariana", location: "Medellín, Colombia" },
+    { name: "Renata", location: "San José, Costa Rica" },
+    { name: "Gabriela", location: "Asunción, Paraguay" },
+    { name: "Ximena", location: "La Paz, Bolivia" },
+    { name: "Paula", location: "Rosario, Argentina" },
+    { name: "Andrea", location: "Ciudad de Panamá, Panamá" },
+    { name: "Julieta", location: "Córdoba, Argentina" },
+    { name: "Natalia", location: "Cali, Colombia" },
+    { name: "Regina", location: "Monterrey, México" },
+    { name: "Emilia", location: "Viña del Mar, Chile" },
+    { name: "Carolina", location: "Arequipa, Perú" },
+  ];
+
+  const [current, setCurrent] = useState<{ name: string; location: string; minutes: number } | null>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    let showTimer: ReturnType<typeof setTimeout>;
+    let hideTimer: ReturnType<typeof setTimeout>;
+    let cycleTimer: ReturnType<typeof setTimeout>;
+
+    const show = () => {
+      const b = buyers[Math.floor(Math.random() * buyers.length)];
+      const minutes = Math.floor(Math.random() * 9) + 1;
+      setCurrent({ ...b, minutes });
+      setVisible(true);
+      hideTimer = setTimeout(() => setVisible(false), 6000);
+      cycleTimer = setTimeout(show, 17000);
+    };
+
+    showTimer = setTimeout(show, 8000);
+
+    return () => {
+      clearTimeout(showTimer);
+      clearTimeout(hideTimer);
+      clearTimeout(cycleTimer);
+    };
+  }, []);
+
+  if (!current) return null;
+
+  return (
+    <div
+      className={`fixed bottom-4 left-4 z-50 max-w-xs transition-all duration-500 ${
+        visible ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"
+      }`}
+      role="status"
+      aria-live="polite"
+    >
+      <div className="flex items-start gap-3 rounded-xl border border-border/60 bg-card/95 p-3 shadow-xl backdrop-blur">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
+          <ShoppingCart className="h-5 w-5" strokeWidth={2.4} />
+        </div>
+        <div className="flex-1 text-xs leading-snug">
+          <p className="font-semibold text-foreground">
+            {current.name} de {current.location}
+          </p>
+          <p className="mt-0.5 text-muted-foreground">
+            acaba de obtener acceso al recetario
+          </p>
+          <p className="mt-1 flex items-center gap-1 text-[11px] text-emerald-700">
+            <CheckCircle2 className="h-3 w-3" /> Compra verificada · hace {current.minutes} min
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 
