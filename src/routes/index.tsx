@@ -508,6 +508,19 @@ function Countdown() {
 
 function Oferta() {
   const [openUpsell, setOpenUpsell] = useState(false);
+  const [upsellTimeLeft, setUpsellTimeLeft] = useState(5 * 60);
+
+  useEffect(() => {
+    if (!openUpsell) return;
+    setUpsellTimeLeft(5 * 60);
+    const interval = setInterval(() => {
+      setUpsellTimeLeft((prev) => (prev > 0 ? prev - 1 : 0));
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [openUpsell]);
+
+  const upsellMinutes = Math.floor(upsellTimeLeft / 60);
+  const upsellSeconds = upsellTimeLeft % 60;
 
   const basicItems = [
     { text: "Recetario 500 recetas antiinflamatorias", included: true },
