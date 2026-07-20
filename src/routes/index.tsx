@@ -63,9 +63,9 @@ import realTostada from "@/assets/real-tostada.png";
 import testimonio1 from "@/assets/testimonio-1.jpg.asset.json";
 import testimonio2 from "@/assets/testimonio-2.jpg.asset.json";
 import testimonio3 from "@/assets/testimonio-3.jpg.asset.json";
-import testimonioValentina from "@/assets/testimonio-valentina.avif.asset.json";
-import testimonioDaniela from "@/assets/testimonio-daniela.avif.asset.json";
-import testimonioCarolina from "@/assets/testimonio-carolina.avif.asset.json";
+import avatarValentina from "@/assets/avatar-valentina.png";
+import avatarDaniela from "@/assets/avatar-daniela.png";
+import avatarCarolina from "@/assets/avatar-carolina.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -866,21 +866,21 @@ function Testimonios() {
     {
       name: "Valentina P.",
       location: "Chile",
-      photo: testimonioValentina,
+      photo: avatarValentina,
       text: "Tengo colon irritable y en menos de 2 semanas dejé de tener esos dolores después de comer. Es la primera vez que como tranquila.",
       highlight: "Sin dolores en menos de 2 semanas",
     },
     {
       name: "Daniela M.",
       location: "Uruguay",
-      photo: testimonioDaniela,
+      photo: avatarDaniela,
       text: "En 7 días bajé 1,5 kg sin pasar hambre y se me quitó la ansiedad por el dulce. Ahora como algo dulce sin culpa y sin bajones.",
       highlight: "-1,5 kg en 7 días, sin ansiedad",
     },
     {
       name: "Carolina F.",
       location: "Perú",
-      photo: testimonioCarolina,
+      photo: avatarCarolina,
       text: "A las 3 semanas mi piel se veía distinta, menos hinchada y con más brillo. Uso el recetario todos los días, cambió por completo cómo como.",
       highlight: "Piel más limpia en 3 semanas",
     },
@@ -913,7 +913,7 @@ function Testimonios() {
                 <p className="mt-4 text-foreground">&ldquo;{t.text}&rdquo;</p>
                 <div className="mt-4 flex items-center gap-3 border-t border-border pt-4">
                   <img
-                    src={t.photo.url}
+                    src={typeof t.photo === "string" ? t.photo : t.photo.url}
                     alt={`Foto de ${t.name}`}
                     width={56}
                     height={56}
