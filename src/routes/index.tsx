@@ -913,7 +913,7 @@ function Testimonios() {
                 <p className="mt-4 text-foreground">&ldquo;{t.text}&rdquo;</p>
                 <div className="mt-4 flex items-center gap-3 border-t border-border pt-4">
                   <img
-                    src={typeof t.photo === "string" ? t.photo : t.photo.url}
+                    src={t.photo}
                     alt={`Foto de ${t.name}`}
                     width={56}
                     height={56}
