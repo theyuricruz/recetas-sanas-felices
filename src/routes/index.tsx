@@ -659,10 +659,11 @@ function Oferta() {
           </div>
 
           {/* Premium offer */}
-          <div className="relative flex flex-col border-2 border-primary bg-card p-10 shadow-[0_40px_100px_-30px_rgba(45,58,40,0.4)] ring-1 ring-primary/20 lg:-mt-8 lg:scale-105 lg:p-12">
+          <div className="relative flex flex-col border-2 border-primary bg-card p-10 shadow-[0_40px_100px_-30px_rgba(45,58,40,0.5)] ring-1 ring-primary/30 before:absolute before:inset-0 before:-z-10 before:translate-y-4 before:scale-[0.98] before:rounded-none before:bg-primary/10 before:blur-2xl lg:-mt-10 lg:scale-110 lg:p-12">
             <span className="absolute right-10 top-0 -translate-y-1/2 bg-primary px-5 py-2 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-foreground shadow-lg">
               ★ Más popular · Recomendado
             </span>
+            <span className="absolute left-0 top-0 -z-10 h-full w-full translate-x-1 translate-y-1 border-2 border-primary/20 bg-transparent" />
             <span className="eyebrow">Plan completo</span>
             <h3 className="mt-4 font-heading text-3xl text-primary">
               Recetario <span className="italic">+ Bonos</span>
