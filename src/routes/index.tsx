@@ -969,7 +969,7 @@ function Testimonios() {
               <CardContent className="p-6">
                 <div className="flex gap-1">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-accent text-accent" />
+                    <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
                 <p className="mt-4 text-foreground">&ldquo;{t.text}&rdquo;</p>
