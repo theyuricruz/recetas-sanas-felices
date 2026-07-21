@@ -516,7 +516,7 @@ function Bonos() {
         <div className="mx-auto mt-20 max-w-xl border-y border-accent/40 py-8 text-center">
           <p className="eyebrow">Valor total de los bonos</p>
           <p className="mt-3 font-heading text-5xl italic text-primary">
-            <span className="line-through decoration-1 opacity-40">$132</span>
+            <span className="text-red-600 line-through decoration-red-600 decoration-2">$132</span>
             <span className="mx-3 text-2xl not-italic text-muted-foreground">·</span>
             hoy incluido
           </p>
