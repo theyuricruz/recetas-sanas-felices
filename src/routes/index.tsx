@@ -1361,19 +1361,19 @@ function PurchaseNotifications() {
       role="status"
       aria-live="polite"
     >
-      <div className="flex items-start gap-3 rounded-xl border border-border/60 bg-card/95 p-3 shadow-xl backdrop-blur">
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
-          <ShoppingCart className="h-5 w-5" strokeWidth={2.4} />
+      <div className="flex items-start gap-3 border border-border/70 bg-background p-4 shadow-lg shadow-foreground/5">
+        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-accent/60 bg-secondary/60 text-primary">
+          <ShoppingCart className="h-4 w-4" strokeWidth={1.6} />
         </div>
         <div className="flex-1 text-xs leading-snug">
-          <p className="font-semibold text-foreground">
-            {current.name} de {current.location}
+          <p className="font-heading text-sm font-normal text-primary">
+            {current.name}, {current.location}
           </p>
-          <p className="mt-0.5 text-muted-foreground">
+          <p className="mt-0.5 font-light text-muted-foreground">
             acaba de obtener acceso al recetario
           </p>
-          <p className="mt-1 flex items-center gap-1 text-[11px] text-emerald-700">
-            <CheckCircle2 className="h-3 w-3" /> Compra verificada · hace {current.minutes} min
+          <p className="mt-1.5 flex items-center gap-1 text-[10px] font-light uppercase tracking-[0.18em] text-muted-foreground">
+            <CheckCircle2 className="h-3 w-3 text-primary" /> Verificada · hace {current.minutes} min
           </p>
         </div>
       </div>
