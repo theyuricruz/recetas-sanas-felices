@@ -155,23 +155,18 @@ function UrgencyBar() {
 
   return (
     <section className="px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto my-12 max-w-4xl rounded-xl border-[3px] border-yellow-400 bg-gradient-to-r from-red-600 to-red-700 p-6 text-center text-white shadow-2xl">
-        <h3 className="text-xl font-bold uppercase sm:text-2xl">
-          🔥 OFERTA ESPECIAL - SOLO HOY {weekday}
-        </h3>
-        <div className="my-5 rounded-lg bg-black/30 px-4 py-4">
-          <p className="text-sm">⏰ Esta oferta termina en:</p>
-          <p className="mt-1 font-mono text-3xl font-bold tabular-nums sm:text-4xl">
-            {mm}:{ss}
-          </p>
-        </div>
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          <div className="rounded-lg bg-black/30 px-5 py-3 text-sm font-semibold">
-            👥 {viewers} personas viendo esto ahora
-          </div>
-          <div className="rounded-lg bg-black/30 px-5 py-3 text-sm font-semibold">
-            ⚠️ Últimas <span className="font-bold text-yellow-400">12</span> unidades con bonos
-          </div>
+      <div className="mx-auto my-16 max-w-4xl border-y border-primary/30 bg-primary px-6 py-10 text-center text-primary-foreground">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-foreground/70">
+          Edición limitada — solo {weekday}
+        </span>
+        <p className="mt-5 font-heading text-3xl italic tabular-nums sm:text-4xl">
+          {mm}<span className="opacity-50">:</span>{ss}
+        </p>
+        <div className="mx-auto mt-4 h-px w-12 bg-primary-foreground/40" />
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs font-light tracking-wide text-primary-foreground/85">
+          <span>{viewers} personas visualizando ahora</span>
+          <span className="hidden h-3 w-px bg-primary-foreground/30 sm:block" />
+          <span>Últimas <span className="font-semibold text-primary-foreground">12</span> unidades con bonos</span>
         </div>
       </div>
     </section>
