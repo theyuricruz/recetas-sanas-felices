@@ -622,21 +622,21 @@ function Oferta() {
           </div>
         </div>
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-2 lg:gap-12">
+        <div className="mt-12 grid gap-6 lg:grid-cols-2 lg:gap-10">
           {/* Basic offer */}
-          <div className="relative flex flex-col border border-border bg-background p-10 transition-colors duration-500 hover:border-accent lg:p-12">
+          <div className="relative flex flex-col border border-border bg-background p-6 transition-colors duration-500 hover:border-accent lg:p-8">
             <span className="eyebrow">Plan esencial</span>
-            <h3 className="mt-4 font-heading text-3xl text-primary">Recetario</h3>
-            <p className="mt-2 text-sm font-light text-muted-foreground">
+            <h3 className="mt-3 font-heading text-2xl text-primary">Recetario</h3>
+            <p className="mt-1.5 text-sm font-light text-muted-foreground">
               Ideal para dar los primeros pasos hacia una vida antiinflamatoria.
             </p>
-            <div className="mt-8 flex items-baseline gap-3">
-              <span className="font-heading text-5xl text-foreground">$5</span>
+            <div className="mt-6 flex items-baseline gap-3">
+              <span className="font-heading text-4xl text-foreground">$5</span>
               <span className="text-sm font-light text-muted-foreground">
                 <span className="text-red-600 line-through decoration-red-600 decoration-2">$9.90</span> · pago único
               </span>
             </div>
-            <ul className="mt-10 flex-1 space-y-4">
+            <ul className="mt-6 flex-1 space-y-3">
               {basicItems.map((item) => (
                 <li key={item.text} className="flex items-start gap-3 text-sm font-light leading-relaxed">
                   {item.included ? (
@@ -652,7 +652,7 @@ function Oferta() {
             </ul>
             <button
               onClick={() => setOpenUpsell(true)}
-              className="mt-10 w-full border border-primary py-4 text-xs font-semibold uppercase tracking-[0.24em] text-primary transition-colors duration-500 hover:bg-primary hover:text-primary-foreground"
+              className="mt-8 w-full border border-primary py-3.5 text-xs font-semibold uppercase tracking-[0.24em] text-primary transition-colors duration-500 hover:bg-primary hover:text-primary-foreground"
             >
               Obtener Acceso Basico
             </button>
