@@ -632,7 +632,7 @@ function Oferta() {
             <div className="mt-8 flex items-baseline gap-3">
               <span className="font-heading text-5xl text-foreground">$5</span>
               <span className="text-sm font-light text-muted-foreground">
-                <span className="line-through decoration-1 opacity-60">$9.90</span> · pago único
+                <span className="text-red-600 line-through decoration-red-600 decoration-2">$9.90</span> · pago único
               </span>
             </div>
             <ul className="mt-10 flex-1 space-y-4">
