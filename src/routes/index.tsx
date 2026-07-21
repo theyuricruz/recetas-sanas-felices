@@ -1283,6 +1283,11 @@ function DoloresComunes() {
             </li>
           ))}
         </ul>
+
+        <p className="mt-8 text-center text-lg font-semibold text-emerald-700">
+          ¿Te identificaste con alguna? Sigue leyendo... 👇
+        </p>
+
       </div>
     </section>
   );
