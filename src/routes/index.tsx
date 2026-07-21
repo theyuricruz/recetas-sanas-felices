@@ -63,6 +63,7 @@ import avatarAna from "@/assets/avatar-ana.png";
 import avatarValentina from "@/assets/avatar-valentina.png";
 import avatarDaniela from "@/assets/avatar-daniela.png";
 import avatarCarolina from "@/assets/avatar-carolina.png";
+import sealGarantia from "@/assets/seal-garantia.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -155,19 +156,21 @@ function UrgencyBar() {
 
   return (
     <section className="px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto my-16 max-w-4xl border-y border-primary/30 bg-primary px-6 py-10 text-center text-primary-foreground">
-        <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-foreground/70">
-          Edición limitada — solo {weekday}
-        </span>
-        <p className="mt-5 font-heading text-3xl italic tabular-nums sm:text-4xl">
-          {mm}<span className="opacity-50">:</span>{ss}
-        </p>
-        <div className="mx-auto mt-4 h-px w-12 bg-primary-foreground/40" />
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs font-light tracking-wide text-primary-foreground/85">
-          <span>{viewers} personas visualizando ahora</span>
-          <span className="hidden h-3 w-px bg-primary-foreground/30 sm:block" />
-          <span>Últimas <span className="font-semibold text-primary-foreground">12</span> unidades con bonos</span>
+      <div className="mx-auto my-10 max-w-3xl border-y border-primary/30 bg-primary px-5 py-5 text-center text-primary-foreground">
+        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-primary-foreground/70">
+            Edición limitada · {weekday}
+          </span>
+          <span className="font-heading text-2xl italic tabular-nums sm:text-3xl">
+            {mm}<span className="opacity-50">:</span>{ss}
+          </span>
         </div>
+        <p className="mt-2 font-heading text-lg italic tracking-tight sm:text-xl">
+          Últimas <span className="not-italic font-semibold underline decoration-2 underline-offset-4">12 unidades</span> con bonos
+        </p>
+        <p className="mt-1 text-[11px] font-light tracking-wide text-primary-foreground/75">
+          {viewers} personas visualizando ahora
+        </p>
       </div>
     </section>
   );
@@ -216,14 +219,14 @@ function PromoBar() {
     setToday(formatted.charAt(0).toUpperCase() + formatted.slice(1));
   }, []);
   return (
-    <div className="sticky top-0 z-40 w-full border-b border-accent/40 bg-secondary/60 text-foreground backdrop-blur">
+    <div className="sticky top-0 z-40 w-full border-b border-red-800/40 bg-red-700 text-white backdrop-blur">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-2 px-4 py-2 text-center sm:flex-row sm:gap-6">
-        <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-primary">
-          <span className="inline-block h-1 w-1 rounded-full bg-primary" />
+        <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-white">
+          <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-white" />
           <span>Edición especial · descuento activo hoy</span>
         </div>
         {today && (
-          <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+          <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-white/85">
             <CalendarDays className="h-3.5 w-3.5" />
             <span>{today}</span>
           </div>
@@ -514,7 +517,7 @@ function Bonos() {
         <div className="mx-auto mt-20 max-w-xl border-y border-accent/40 py-8 text-center">
           <p className="eyebrow">Valor total de los bonos</p>
           <p className="mt-3 font-heading text-5xl italic text-primary">
-            <span className="line-through decoration-1 opacity-40">$132</span>
+            <span className="text-red-600 line-through decoration-red-600 decoration-2">$132</span>
             <span className="mx-3 text-2xl not-italic text-muted-foreground">·</span>
             hoy incluido
           </p>
@@ -572,16 +575,24 @@ function Oferta() {
     { text: "Recetario 1500 recetas antiinflamatorias", included: true },
     { text: "Acceso digital inmediato", included: true },
     { text: "Garantía incondicional de 30 días", included: true },
-    { text: "Bono 1: Lista de Compras Antiinflamatoria", included: false },
-    { text: "Bono 2: Plan Nutricional Antiinflamatorio", included: false },
-    { text: "Bono 3: Guía de Sustituciones Saludables", included: false },
+    { text: "Bono 1: Guía de Compra Inteligente", included: false },
+    { text: "Bono 2: Tus Primeros 7 Días Paso a Paso", included: false },
+    { text: "Bono 3: Manual S.O.S. de Ingredientes", included: false },
+    { text: "Bono 4: 50 Postres Sin Culpa", included: false },
+    { text: "Bono 5: Snacks Express en 5 Minutos", included: false },
+    { text: "Bono 6: Batidos Antiinflamatorios", included: false },
+    { text: "Bono 7: Recetas para Toda la Familia", included: false },
   ];
 
   const premiumItems = [
     "Recetario digital con +1500 recetas",
-    "Bono 1: Lista de Compras Antiinflamatoria",
-    "Bono 2: Plan Nutricional Antiinflamatorio",
-    "Bono 3: Guía de Sustituciones Saludables",
+    "Bono 1: Guía de Compra Inteligente",
+    "Bono 2: Tus Primeros 7 Días Paso a Paso",
+    "Bono 3: Manual S.O.S. de Ingredientes",
+    "Bono 4: 50 Postres Sin Culpa",
+    "Bono 5: Snacks Express en 5 Minutos",
+    "Bono 6: Batidos Antiinflamatorios",
+    "Bono 7: Recetas para Toda la Familia",
     "Acceso digital inmediato",
     "Garantía incondicional de 30 días",
   ];
@@ -622,7 +633,7 @@ function Oferta() {
             <div className="mt-8 flex items-baseline gap-3">
               <span className="font-heading text-5xl text-foreground">$5</span>
               <span className="text-sm font-light text-muted-foreground">
-                <span className="line-through decoration-1 opacity-60">$9.90</span> · pago único
+                <span className="text-red-600 line-through decoration-red-600 decoration-2">$9.90</span> · pago único
               </span>
             </div>
             <ul className="mt-10 flex-1 space-y-4">
@@ -648,27 +659,27 @@ function Oferta() {
           </div>
 
           {/* Premium offer */}
-          <div className="relative flex flex-col border border-primary bg-card p-10 shadow-[0_30px_80px_-30px_rgba(45,58,40,0.25)] lg:-mt-4 lg:p-12">
-            <span className="absolute right-10 top-0 -translate-y-1/2 bg-accent px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.28em] text-foreground">
-              Más popular
+          <div className="relative flex flex-col border-2 border-primary bg-card p-10 shadow-[0_40px_100px_-30px_rgba(45,58,40,0.4)] ring-1 ring-primary/20 lg:-mt-8 lg:scale-105 lg:p-12">
+            <span className="absolute right-10 top-0 -translate-y-1/2 bg-primary px-5 py-2 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-foreground shadow-lg">
+              ★ Más popular · Recomendado
             </span>
             <span className="eyebrow">Plan completo</span>
             <h3 className="mt-4 font-heading text-3xl text-primary">
               Recetario <span className="italic">+ Bonos</span>
             </h3>
             <p className="mt-2 text-sm font-light text-muted-foreground">
-              La experiencia completa: recetario, plan y sustituciones.
+              La experiencia completa: recetario y los 7 bonos exclusivos.
             </p>
             <div className="mt-8 flex items-baseline gap-3">
-              <span className="font-heading text-5xl text-primary">$15</span>
+              <span className="font-heading text-6xl text-primary">$15</span>
               <span className="text-sm font-light text-muted-foreground">
-                <span className="line-through decoration-1 opacity-60">$27</span> · ahorras 40%
+                <span className="text-red-600 line-through decoration-red-600 decoration-2">$27</span> · ahorras 44%
               </span>
             </div>
             <ul className="mt-10 flex-1 space-y-4">
               {premiumItems.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-sm font-light leading-relaxed text-foreground">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" strokeWidth={2.2} />
                   <span>{item}</span>
                 </li>
               ))}
@@ -677,9 +688,9 @@ function Oferta() {
               href="https://pay.hotmart.com/X106687062E?checkoutMode=10"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-10 block w-full bg-primary py-4 text-center text-xs font-semibold uppercase tracking-[0.24em] text-primary-foreground transition-colors duration-500 hover:bg-foreground"
+              className="mt-10 block w-full bg-primary py-5 text-center text-xs font-semibold uppercase tracking-[0.24em] text-primary-foreground shadow-xl shadow-primary/30 transition-all duration-500 hover:scale-[1.02] hover:bg-foreground"
             >
-              Obtener acceso completo
+              Obtener Acceso Completo
             </a>
             <p className="mt-5 flex items-center justify-center gap-2 text-[11px] font-light uppercase tracking-[0.18em] text-muted-foreground">
               <ShieldCheck className="h-3 w-3" />
@@ -959,7 +970,7 @@ function Testimonios() {
               <CardContent className="p-6">
                 <div className="flex gap-1">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-accent text-accent" />
+                    <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
                 <p className="mt-4 text-foreground">&ldquo;{t.text}&rdquo;</p>
@@ -990,59 +1001,35 @@ function Testimonios() {
 
 
 function Garantia() {
-  const bullets = [
-    { icon: Lock, text: "Pago protegido con encriptación segura" },
-    { icon: ShieldCheck, text: "Tu información nunca es compartida con terceros" },
-    { icon: Clock, text: "30 días completos para probar todo el material" },
-    { icon: CheckCircle2, text: "Devolución simple: solo escríbenos y te reembolsamos" },
-  ];
-
   return (
-    <section className="relative overflow-hidden px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+    <section className="relative overflow-hidden px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
       <div className="absolute inset-0 bg-gradient-to-br from-secondary/40 via-background to-secondary/30" />
-      <div className="pointer-events-none absolute top-1/2 left-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/8 blur-3xl" />
 
-      <div className="relative mx-auto max-w-3xl">
-        <div className="rounded-3xl border border-border/60 bg-card/80 p-6 shadow-xl shadow-foreground/5 backdrop-blur-sm sm:p-10">
-          <div className="flex flex-col items-center text-center">
-            <div className="flex flex-wrap items-center justify-center gap-2">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
-                <ShieldCheck className="h-3.5 w-3.5" />
-                Compra protegida
-              </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-                <Lock className="h-3.5 w-3.5" />
-                100% seguro
-              </span>
-            </div>
-
-            <h2 className="mt-5 font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
+      <div className="relative mx-auto max-w-2xl">
+        <div className="flex flex-col items-center gap-5 rounded-2xl border border-border/60 bg-card/80 p-6 text-center shadow-lg shadow-foreground/5 backdrop-blur-sm sm:flex-row sm:text-left">
+          <img
+            src={sealGarantia}
+            alt="Sello de garantía 30 días"
+            width={140}
+            height={140}
+            loading="lazy"
+            className="h-28 w-28 shrink-0 sm:h-32 sm:w-32"
+          />
+          <div className="flex-1">
+            <span className="eyebrow">Compra protegida · 100% seguro</span>
+            <h2 className="mt-2 font-heading text-2xl leading-tight text-primary sm:text-3xl">
               Garantía incondicional de 30 días
             </h2>
-            <p className="mt-3 max-w-xl text-base leading-relaxed text-muted-foreground">
-              Accede al material, revísalo con calma y si sientes que no es para ti, te devolvemos
-              el 100% de tu inversión. Sin preguntas.
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              Accede al material, revísalo con calma y si no es para ti, te devolvemos el 100%. Sin preguntas.
             </p>
-
-            <ul className="mt-6 grid w-full gap-3 text-left sm:grid-cols-2">
-              {bullets.map((item) => (
-                <li key={item.text} className="flex items-start gap-3 py-2">
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                    <item.icon className="h-4 w-4" strokeWidth={2.2} />
-                  </div>
-                  <p className="text-sm leading-snug text-foreground">{item.text}</p>
-                </li>
-              ))}
-            </ul>
-
-            <Button
+            <button
               onClick={scrollToOferta}
-              size="lg"
-              className="mt-8 h-12 px-8 text-base font-semibold shadow-lg shadow-primary/25 transition-all hover:scale-105 hover:shadow-xl hover:shadow-primary/30"
+              className="mt-4 inline-flex items-center gap-2 bg-primary px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-foreground transition-colors duration-500 hover:bg-foreground"
             >
               Sí, quiero probarlo sin riesgo
-              <ArrowRightLeft className="ml-2 h-4 w-4" />
-            </Button>
+              <ArrowRightLeft className="h-3.5 w-3.5" />
+            </button>
           </div>
         </div>
       </div>
