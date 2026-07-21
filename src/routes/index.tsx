@@ -1248,22 +1248,6 @@ function DoloresComunes() {
       ),
     },
     {
-      emoji: "😤",
-      text: (
-        <>
-          ¿Sientes que haces el esfuerzo de cuidarte pero sigues con <strong>falta de energía y pesadez</strong>?
-        </>
-      ),
-    },
-    {
-      emoji: "😰",
-      text: (
-        <>
-          ¿Empiezas a comer saludable… pero terminas abandonando porque no es práctico ni sostenible?
-        </>
-      ),
-    },
-    {
       emoji: "🍬",
       text: (
         <>
