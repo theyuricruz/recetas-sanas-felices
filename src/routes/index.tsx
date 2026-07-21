@@ -112,15 +112,17 @@ function Index() {
 function CtaAfterComparison() {
   return (
     <section className="px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto my-10 max-w-4xl rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 px-6 py-10 text-center shadow-xl">
-        <h2 className="text-2xl font-bold text-white sm:text-3xl">
-          Empieza a desinflamarte hoy
+      <div className="mx-auto my-16 max-w-4xl border-y border-accent/40 bg-secondary/30 px-6 py-14 text-center">
+        <span className="eyebrow">Empieza hoy</span>
+        <h2 className="mt-4 font-heading text-3xl leading-tight text-primary sm:text-4xl">
+          Empieza a desinflamarte <span className="italic">desde esta semana</span>
         </h2>
+        <div className="hairline mx-auto mt-6" />
         <a
           href="#oferta"
-          className="mt-6 inline-block rounded-full bg-white px-12 py-4 text-lg font-bold text-emerald-700 shadow-lg transition-transform hover:scale-105"
+          className="mt-8 inline-block bg-primary px-12 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground transition-colors duration-500 hover:bg-accent hover:text-foreground"
         >
-          QUIERO MIS 1500 RECETAS →
+          Quiero mis 1500 recetas
         </a>
       </div>
     </section>
