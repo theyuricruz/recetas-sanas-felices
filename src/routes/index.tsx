@@ -523,7 +523,7 @@ function Oferta() {
   const upsellSeconds = upsellTimeLeft % 60;
 
   const basicItems = [
-    { text: "Recetario 500 recetas antiinflamatorias", included: true },
+    { text: "Recetario 1500 recetas antiinflamatorias", included: true },
     { text: "Acceso digital inmediato", included: true },
     { text: "Garantía incondicional de 30 días", included: true },
     { text: "Bono 1: Lista de Compras Antiinflamatoria", included: false },
@@ -672,7 +672,7 @@ function Oferta() {
             </span>
             <DialogHeader className="mt-2 text-center">
               <DialogTitle className="text-xl font-bold leading-tight text-white">
-                ¡Espera! Por $4.90 más, llevas 3x más recetas y los 3 bonos
+                ¡Espera! Por $4.90 más, llevas los 3 bonos exclusivos
               </DialogTitle>
             </DialogHeader>
             <div className="mt-3 inline-flex items-center gap-1.5 rounded-lg bg-white/15 px-3 py-1.5 backdrop-blur-sm">
@@ -694,7 +694,7 @@ function Oferta() {
 
             <div className="mt-3 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2.5 text-center dark:border-amber-900/40 dark:bg-amber-900/20">
               <p className="text-xs font-bold text-amber-800 dark:text-amber-200">
-                500 recetas → 1.500 recetas + 3 bonos exclusivos
+                1.500 recetas + 3 bonos exclusivos por $4.90 más
               </p>
             </div>
 
