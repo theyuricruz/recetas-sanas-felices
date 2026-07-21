@@ -155,19 +155,21 @@ function UrgencyBar() {
 
   return (
     <section className="px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto my-16 max-w-4xl border-y border-primary/30 bg-primary px-6 py-10 text-center text-primary-foreground">
-        <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-foreground/70">
-          Edición limitada — solo {weekday}
-        </span>
-        <p className="mt-5 font-heading text-3xl italic tabular-nums sm:text-4xl">
-          {mm}<span className="opacity-50">:</span>{ss}
-        </p>
-        <div className="mx-auto mt-4 h-px w-12 bg-primary-foreground/40" />
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs font-light tracking-wide text-primary-foreground/85">
-          <span>{viewers} personas visualizando ahora</span>
-          <span className="hidden h-3 w-px bg-primary-foreground/30 sm:block" />
-          <span>Últimas <span className="font-semibold text-primary-foreground">12</span> unidades con bonos</span>
+      <div className="mx-auto my-10 max-w-3xl border-y border-primary/30 bg-primary px-5 py-5 text-center text-primary-foreground">
+        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-primary-foreground/70">
+            Edición limitada · {weekday}
+          </span>
+          <span className="font-heading text-2xl italic tabular-nums sm:text-3xl">
+            {mm}<span className="opacity-50">:</span>{ss}
+          </span>
         </div>
+        <p className="mt-2 font-heading text-lg italic tracking-tight sm:text-xl">
+          Últimas <span className="not-italic font-semibold underline decoration-2 underline-offset-4">12 unidades</span> con bonos
+        </p>
+        <p className="mt-1 text-[11px] font-light tracking-wide text-primary-foreground/75">
+          {viewers} personas visualizando ahora
+        </p>
       </div>
     </section>
   );
