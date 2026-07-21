@@ -654,7 +654,7 @@ function Oferta() {
               onClick={() => setOpenUpsell(true)}
               className="mt-10 w-full border border-primary py-4 text-xs font-semibold uppercase tracking-[0.24em] text-primary transition-colors duration-500 hover:bg-primary hover:text-primary-foreground"
             >
-              Seleccionar
+              Obtener Acceso Basico
             </button>
           </div>
 
