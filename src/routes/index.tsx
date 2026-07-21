@@ -590,127 +590,108 @@ function Oferta() {
   ];
 
   return (
-    <section id="oferta" className="relative overflow-hidden bg-primary px-4 py-8 text-primary-foreground sm:px-6 lg:px-8 lg:py-12">
-      {/* Premium ambient background */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-primary/80 via-primary to-primary/90" />
-      <div className="pointer-events-none absolute -top-20 left-1/2 h-[400px] w-[400px] -translate-x-1/2 rounded-full bg-white/5 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-20 -right-20 h-[300px] w-[300px] rounded-full bg-accent/10 blur-3xl" />
-      <div className="pointer-events-none absolute top-1/2 -left-20 h-[200px] w-[200px] rounded-full bg-white/5 blur-3xl" />
-      <div className="relative mx-auto max-w-4xl">
+    <section id="oferta" className="relative bg-background px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
+      <div className="relative mx-auto max-w-5xl">
         <div className="text-center">
-          <span className="inline-block rounded-full bg-accent px-3 py-1 text-[11px] font-bold text-accent-foreground">
-            Oferta especial por tiempo limitado
-          </span>
-          <h2 className="mt-2 text-xl font-bold tracking-tight sm:text-2xl lg:text-3xl">
-            Elige Tu Oferta
+          <span className="eyebrow">Oferta editorial · tiempo limitado</span>
+          <h2 className="mt-5 font-heading text-4xl leading-[1.05] text-primary sm:text-5xl lg:text-6xl">
+            Elige tu <span className="italic">camino</span>
           </h2>
-          <p className="mx-auto mt-2 max-w-2xl text-sm opacity-90">
-            Selecciona la opción que mejor se adapte a ti.
+          <div className="hairline mx-auto mt-6" />
+          <p className="mx-auto mt-6 max-w-lg text-base font-light leading-relaxed text-muted-foreground">
+            Selecciona la opción que mejor se adapte a ti. Acceso inmediato tras la compra.
           </p>
         </div>
 
-        <div className="mx-auto mt-4 max-w-md">
-          <Countdown />
+        <div className="mx-auto mt-10 max-w-md">
+          <div className="border-y border-accent/40 py-4 text-center">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-primary">
+              Últimos 15 minutos con este precio
+            </p>
+            <div className="mt-3">
+              <Countdown />
+            </div>
+          </div>
         </div>
 
-        <div className="mt-5 grid gap-4 lg:grid-cols-2">
+        <div className="mt-16 grid gap-8 lg:grid-cols-2 lg:gap-12">
           {/* Basic offer */}
-          <div className="relative flex flex-col overflow-hidden rounded-2xl bg-white text-foreground shadow-xl ring-1 ring-black/5">
-            {/* Header */}
-            <div className="border-b border-black/5 bg-gradient-to-b from-white to-secondary/30 px-5 py-3 text-center">
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
-                Básico
+          <div className="relative flex flex-col border border-border bg-background p-10 transition-colors duration-500 hover:border-accent lg:p-12">
+            <span className="eyebrow">Plan esencial</span>
+            <h3 className="mt-4 font-heading text-3xl text-primary">Recetario</h3>
+            <p className="mt-2 text-sm font-light text-muted-foreground">
+              Ideal para dar los primeros pasos hacia una vida antiinflamatoria.
+            </p>
+            <div className="mt-8 flex items-baseline gap-3">
+              <span className="font-heading text-5xl text-foreground">$5</span>
+              <span className="text-sm font-light text-muted-foreground">
+                <span className="line-through decoration-1 opacity-60">$9.90</span> · pago único
               </span>
             </div>
-            {/* Price */}
-            <div className="px-5 pt-5 text-center">
-              <div className="flex items-baseline justify-center gap-2">
-                <span className="text-lg font-semibold text-red-500 line-through decoration-red-500/80">$9.90</span>
-                <span className="text-4xl font-extrabold tracking-tight text-foreground">$5</span>
-              </div>
-              <p className="mt-1 text-[11px] font-medium text-muted-foreground">pago único</p>
-            </div>
-            {/* Items */}
-            <div className="flex flex-1 flex-col px-5 pb-5 pt-4">
-              <ul className="space-y-2">
-                {basicItems.map((item) => (
-                  <li key={item.text} className="flex items-start gap-2.5">
-                    {item.included ? (
-                      <span className="mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded-full bg-green-100">
-                        <CheckCircle2 className="h-3 w-3 text-green-600" strokeWidth={3} />
-                      </span>
-                    ) : (
-                      <span className="mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded-full bg-red-100">
-                        <XCircle className="h-3 w-3 text-red-500" strokeWidth={3} />
-                      </span>
-                    )}
-                    <span className={`text-xs leading-relaxed ${item.included ? "text-foreground" : "text-muted-foreground line-through"}`}>
-                      {item.text}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-              <Button
-                size="sm"
-                variant="outline"
-                className="mt-5 h-11 w-full rounded-xl border-black/10 bg-secondary/40 px-4 text-xs font-bold uppercase tracking-wider text-foreground hover:bg-secondary/70"
-                onClick={() => setOpenUpsell(true)}
-              >
-                Obtener Acceso Básico
-              </Button>
-            </div>
+            <ul className="mt-10 flex-1 space-y-4">
+              {basicItems.map((item) => (
+                <li key={item.text} className="flex items-start gap-3 text-sm font-light leading-relaxed">
+                  {item.included ? (
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                  ) : (
+                    <XCircle className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground/50" strokeWidth={1.5} />
+                  )}
+                  <span className={item.included ? "text-foreground" : "text-muted-foreground/70 line-through"}>
+                    {item.text}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <button
+              onClick={() => setOpenUpsell(true)}
+              className="mt-10 w-full border border-primary py-4 text-xs font-semibold uppercase tracking-[0.24em] text-primary transition-colors duration-500 hover:bg-primary hover:text-primary-foreground"
+            >
+              Seleccionar
+            </button>
           </div>
 
           {/* Premium offer */}
-          <div className="relative flex flex-col overflow-hidden rounded-2xl bg-white text-foreground shadow-2xl ring-1 ring-green-900/10">
-            {/* Green banner header */}
-            <div className="relative overflow-hidden bg-gradient-to-r from-green-800 via-green-700 to-amber-500 px-5 py-3 text-center">
-              <div className="flex items-center justify-center gap-2 text-white">
-                <Crown className="h-4 w-4 text-amber-200" />
-                <span className="text-xs font-bold uppercase tracking-[0.18em]">
-                  Más popular — Mejor valor
-                </span>
-              </div>
-            </div>
-            {/* Discount pill + Price */}
-            <div className="px-5 pt-5 text-center">
-              <span className="inline-block rounded-full bg-green-50 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-green-800 ring-1 ring-green-800/10">
-                Ahorras más del 40%
+          <div className="relative flex flex-col border border-primary bg-card p-10 shadow-[0_30px_80px_-30px_rgba(45,58,40,0.25)] lg:-mt-4 lg:p-12">
+            <span className="absolute right-10 top-0 -translate-y-1/2 bg-accent px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.28em] text-foreground">
+              Más popular
+            </span>
+            <span className="eyebrow">Plan completo</span>
+            <h3 className="mt-4 font-heading text-3xl text-primary">
+              Recetario <span className="italic">+ Bonos</span>
+            </h3>
+            <p className="mt-2 text-sm font-light text-muted-foreground">
+              La experiencia completa: recetario, plan y sustituciones.
+            </p>
+            <div className="mt-8 flex items-baseline gap-3">
+              <span className="font-heading text-5xl text-primary">$15</span>
+              <span className="text-sm font-light text-muted-foreground">
+                <span className="line-through decoration-1 opacity-60">$27</span> · ahorras 40%
               </span>
-              <p className="mt-3 text-lg font-semibold text-red-500 line-through decoration-red-500/80">$27</p>
-              <p className="mt-0.5 text-5xl font-extrabold tracking-tight text-green-700">$15</p>
-              <p className="mt-1 text-[11px] font-medium text-muted-foreground">pago único</p>
             </div>
-            {/* Items */}
-            <div className="flex flex-1 flex-col px-5 pb-5 pt-4">
-              <div className="mb-4 h-px w-full bg-gradient-to-r from-transparent via-black/10 to-transparent" />
-              <ul className="space-y-2">
-                {premiumItems.map((item) => (
-                  <li key={item} className="flex items-start gap-2.5">
-                    <span className="mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded-full bg-green-100">
-                      <CheckCircle2 className="h-3 w-3 text-green-700" strokeWidth={3} />
-                    </span>
-                    <span className="text-xs leading-relaxed text-foreground">{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <Button
-                asChild
-                size="sm"
-                className="mt-5 h-12 w-full rounded-xl bg-gradient-to-r from-green-700 via-green-600 to-amber-500 px-4 text-xs font-bold uppercase tracking-wider text-white shadow-lg shadow-green-900/20 transition-transform hover:scale-[1.02]"
-              >
-                <a href="https://pay.hotmart.com/X106687062E?checkoutMode=10" target="_blank" rel="noopener noreferrer">
-                  Obtener Acceso Completo
-                </a>
-              </Button>
-              <p className="mt-3 flex items-center justify-center gap-1.5 text-[10px] text-muted-foreground">
-                <ShieldCheck className="h-3 w-3" />
-                Compra 100% segura · Garantía de 30 días
-              </p>
-            </div>
+            <ul className="mt-10 flex-1 space-y-4">
+              {premiumItems.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-sm font-light leading-relaxed text-foreground">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <a
+              href="https://pay.hotmart.com/X106687062E?checkoutMode=10"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-10 block w-full bg-primary py-4 text-center text-xs font-semibold uppercase tracking-[0.24em] text-primary-foreground transition-colors duration-500 hover:bg-foreground"
+            >
+              Obtener acceso completo
+            </a>
+            <p className="mt-5 flex items-center justify-center gap-2 text-[11px] font-light uppercase tracking-[0.18em] text-muted-foreground">
+              <ShieldCheck className="h-3 w-3" />
+              Compra segura · Garantía 30 días
+            </p>
           </div>
         </div>
       </div>
+
 
       {/* Upsell popup for basic plan click */}
       <Dialog open={openUpsell} onOpenChange={setOpenUpsell}>
