@@ -479,61 +479,45 @@ function Bonos() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-secondary/30 via-background to-secondary/20 px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+    <section className="relative bg-secondary/40 px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="relative mx-auto max-w-6xl">
         <div className="text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
-            <Star className="h-3.5 w-3.5" />
-            Solo por tiempo limitado
-          </span>
-          <h2 className="mt-3 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            Bonos especiales incluidos
+          <span className="eyebrow">Complementos exclusivos</span>
+          <h2 className="mt-5 font-heading text-4xl leading-[1.05] text-primary sm:text-5xl">
+            Bonos de <span className="italic">regalo</span>
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-base text-muted-foreground">
-            Además del recetario, recibes 7 guías complementarias para aprovechar mejor el material.
+          <div className="hairline mx-auto mt-6" />
+          <p className="mx-auto mt-6 max-w-xl text-base font-light leading-relaxed text-muted-foreground">
+            Hemos preparado siete guías complementarias para asegurar que tu transición a una vida antiinflamatoria sea fluida, elegante y duradera.
           </p>
         </div>
 
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {bonuses.map((b) => {
-            const isYellow = b.highlight;
-            return (
-              <div
-                key={b.title}
-                className={`rounded-xl border-2 p-6 text-center shadow-sm transition-transform hover:-translate-y-1 ${
-                  isYellow
-                    ? "border-amber-500 bg-gradient-to-b from-amber-100 to-amber-200"
-                    : "border-emerald-500 bg-gradient-to-b from-emerald-50 to-emerald-100"
-                }`}
-              >
-                <div
-                  className={`mx-auto flex h-20 w-20 items-center justify-center rounded-xl text-4xl ${
-                    isYellow ? "bg-amber-500" : "bg-emerald-500"
-                  }`}
-                >
-                  {b.icon}
-                </div>
-                <h3 className={`mt-4 text-lg font-bold ${isYellow ? "text-amber-900" : "text-emerald-900"}`}>
-                  {b.title}
-                </h3>
-                <p className={`mt-2 text-sm ${isYellow ? "text-amber-800" : "text-emerald-800"}`}>
-                  {b.desc}
-                </p>
-                <p className="mt-3 text-sm">
-                  Valor: <span className="text-red-600 line-through">{b.value}</span>{" "}
-                  <span className={`font-bold ${isYellow ? "text-amber-600" : "text-emerald-600"}`}>
-                    GRATIS{isYellow ? " 🎁" : ""}
-                  </span>
-                </p>
-              </div>
-            );
-          })}
+        <div className="mt-16 grid gap-y-12 gap-x-10 sm:grid-cols-2 lg:grid-cols-3">
+          {bonuses.map((b, i) => (
+            <div key={b.title} className="flex flex-col gap-3">
+              <span className="text-[11px] font-semibold tracking-[0.28em] text-accent">
+                {String(i + 1).padStart(2, "0")} /
+              </span>
+              <h3 className="font-heading text-xl leading-snug text-foreground">
+                {b.title}
+              </h3>
+              <p className="text-sm font-light leading-relaxed text-muted-foreground">
+                {b.desc}
+              </p>
+              <p className="mt-1 text-[11px] uppercase tracking-[0.2em] text-primary">
+                Valor <span className="line-through opacity-60">{b.value}</span> · incluido
+              </p>
+            </div>
+          ))}
         </div>
 
-        <div className="mx-auto my-10 max-w-2xl rounded-xl border-[3px] border-dashed border-amber-500 bg-gradient-to-b from-amber-100 to-amber-200 p-8 text-center">
-          <p className="text-lg text-amber-900">Valor total de los bonos:</p>
-          <p className="mt-2 text-4xl font-bold text-red-600 line-through">$132</p>
-          <p className="mt-2 text-3xl font-bold text-emerald-600">HOY GRATIS 🎁</p>
+        <div className="mx-auto mt-20 max-w-xl border-y border-accent/40 py-8 text-center">
+          <p className="eyebrow">Valor total de los bonos</p>
+          <p className="mt-3 font-heading text-5xl italic text-primary">
+            <span className="line-through decoration-1 opacity-40">$132</span>
+            <span className="mx-3 text-2xl not-italic text-muted-foreground">·</span>
+            hoy incluido
+          </p>
         </div>
       </div>
     </section>
