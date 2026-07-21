@@ -540,14 +540,11 @@ function Countdown() {
   const seconds = timeLeft % 60;
 
   return (
-    <div className="rounded-xl bg-black/10 px-4 py-2.5 text-center">
-      <p className="text-[11px] font-medium uppercase tracking-wider opacity-90">
-        Oferta especial — últimos 15 minutos
-      </p>
+    <div className="text-center">
       {mounted && (
-        <div className="mt-0.5 flex justify-center gap-1 text-xl font-bold tabular-nums sm:text-2xl">
+        <div className="flex justify-center gap-1 font-heading text-4xl italic tabular-nums text-primary sm:text-5xl">
           <span>{String(minutes).padStart(2, "0")}</span>
-          <span>:</span>
+          <span className="opacity-40">:</span>
           <span>{String(seconds).padStart(2, "0")}</span>
         </div>
       )}
