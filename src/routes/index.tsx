@@ -658,27 +658,27 @@ function Oferta() {
           </div>
 
           {/* Premium offer */}
-          <div className="relative flex flex-col border border-primary bg-card p-10 shadow-[0_30px_80px_-30px_rgba(45,58,40,0.25)] lg:-mt-4 lg:p-12">
-            <span className="absolute right-10 top-0 -translate-y-1/2 bg-accent px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.28em] text-foreground">
-              Más popular
+          <div className="relative flex flex-col border-2 border-primary bg-card p-10 shadow-[0_40px_100px_-30px_rgba(45,58,40,0.4)] ring-1 ring-primary/20 lg:-mt-8 lg:scale-105 lg:p-12">
+            <span className="absolute right-10 top-0 -translate-y-1/2 bg-primary px-5 py-2 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-foreground shadow-lg">
+              ★ Más popular · Recomendado
             </span>
             <span className="eyebrow">Plan completo</span>
             <h3 className="mt-4 font-heading text-3xl text-primary">
               Recetario <span className="italic">+ Bonos</span>
             </h3>
             <p className="mt-2 text-sm font-light text-muted-foreground">
-              La experiencia completa: recetario, plan y sustituciones.
+              La experiencia completa: recetario y los 7 bonos exclusivos.
             </p>
             <div className="mt-8 flex items-baseline gap-3">
-              <span className="font-heading text-5xl text-primary">$15</span>
+              <span className="font-heading text-6xl text-primary">$15</span>
               <span className="text-sm font-light text-muted-foreground">
-                <span className="line-through decoration-1 opacity-60">$27</span> · ahorras 40%
+                <span className="text-red-600 line-through decoration-red-600 decoration-2">$27</span> · ahorras 44%
               </span>
             </div>
             <ul className="mt-10 flex-1 space-y-4">
               {premiumItems.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-sm font-light leading-relaxed text-foreground">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" strokeWidth={2.2} />
                   <span>{item}</span>
                 </li>
               ))}
@@ -687,9 +687,9 @@ function Oferta() {
               href="https://pay.hotmart.com/X106687062E?checkoutMode=10"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-10 block w-full bg-primary py-4 text-center text-xs font-semibold uppercase tracking-[0.24em] text-primary-foreground transition-colors duration-500 hover:bg-foreground"
+              className="mt-10 block w-full bg-primary py-5 text-center text-xs font-semibold uppercase tracking-[0.24em] text-primary-foreground shadow-xl shadow-primary/30 transition-all duration-500 hover:scale-[1.02] hover:bg-foreground"
             >
-              Obtener acceso completo
+              Obtener Acceso Completo
             </a>
             <p className="mt-5 flex items-center justify-center gap-2 text-[11px] font-light uppercase tracking-[0.18em] text-muted-foreground">
               <ShieldCheck className="h-3 w-3" />
