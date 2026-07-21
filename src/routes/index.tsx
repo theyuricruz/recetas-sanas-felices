@@ -54,9 +54,6 @@ import desayuno from "@/assets/desayuno.jpg";
 import almuerzoCena from "@/assets/almuerzo-cena.jpg";
 import postres from "@/assets/postres.jpg";
 import bonos from "@/assets/bonos.jpg";
-import listaCompras from "@/assets/lista-compras.jpg";
-import reset14Dias from "@/assets/reset-14-dias.jpg";
-import guiaSustituciones from "@/assets/guia-sustituciones.jpg";
 import realAlmuerzosCenas from "@/assets/real-almuerzos-cenas.png";
 import realQuesoHuevo from "@/assets/real-queso-huevo.png";
 import realTostada from "@/assets/real-tostada.png";
@@ -96,17 +93,116 @@ function Index() {
       <Hero />
       <DoloresComunes />
       <Comparacion />
+      <CtaAfterComparison />
       <QueRecibir />
-      
-      <Bonos />
-      <Oferta />
       <Ejemplos />
+      <Bonos />
+      <UrgencyBar />
+      <Oferta />
       <Testimonios />
       <Garantia />
       <PreguntasFrecuentes />
       <Footer />
       <PurchaseNotifications />
+      <StickyCta />
     </main>
+  );
+}
+
+function CtaAfterComparison() {
+  return (
+    <section className="px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto my-10 max-w-4xl rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 px-6 py-10 text-center shadow-xl">
+        <h2 className="text-2xl font-bold text-white sm:text-3xl">
+          Empieza a desinflamarte hoy
+        </h2>
+        <a
+          href="#oferta"
+          className="mt-6 inline-block rounded-full bg-white px-12 py-4 text-lg font-bold text-emerald-700 shadow-lg transition-transform hover:scale-105"
+        >
+          QUIERO MIS 1500 RECETAS →
+        </a>
+      </div>
+    </section>
+  );
+}
+
+function UrgencyBar() {
+  const [timeLeft, setTimeLeft] = useState(15 * 60);
+  const [viewers, setViewers] = useState(47);
+  const [weekday, setWeekday] = useState("");
+
+  useEffect(() => {
+    const days = ["DOMINGO", "LUNES", "MARTES", "MIÉRCOLES", "JUEVES", "VIERNES", "SÁBADO"];
+    setWeekday(days[new Date().getDay()]);
+
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => (prev <= 1 ? 15 * 60 : prev - 1));
+    }, 1000);
+    const viewersTimer = setInterval(() => {
+      setViewers(Math.floor(Math.random() * 31) + 35);
+    }, 8000);
+    return () => {
+      clearInterval(timer);
+      clearInterval(viewersTimer);
+    };
+  }, []);
+
+  const mm = String(Math.floor(timeLeft / 60)).padStart(2, "0");
+  const ss = String(timeLeft % 60).padStart(2, "0");
+
+  return (
+    <section className="px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto my-12 max-w-4xl rounded-xl border-[3px] border-yellow-400 bg-gradient-to-r from-red-600 to-red-700 p-6 text-center text-white shadow-2xl">
+        <h3 className="text-xl font-bold uppercase sm:text-2xl">
+          🔥 OFERTA ESPECIAL - SOLO HOY {weekday}
+        </h3>
+        <div className="my-5 rounded-lg bg-black/30 px-4 py-4">
+          <p className="text-sm">⏰ Esta oferta termina en:</p>
+          <p className="mt-1 font-mono text-3xl font-bold tabular-nums sm:text-4xl">
+            {mm}:{ss}
+          </p>
+        </div>
+        <div className="flex flex-wrap items-center justify-center gap-4">
+          <div className="rounded-lg bg-black/30 px-5 py-3 text-sm font-semibold">
+            👥 {viewers} personas viendo esto ahora
+          </div>
+          <div className="rounded-lg bg-black/30 px-5 py-3 text-sm font-semibold">
+            ⚠️ Últimas <span className="font-bold text-yellow-400">12</span> unidades con bonos
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function StickyCta() {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 600);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <div
+      className={`fixed inset-x-0 bottom-0 z-[9999] bg-gradient-to-r from-emerald-500 to-emerald-600 px-5 py-3 shadow-[0_-10px_30px_-5px_rgba(0,0,0,0.3)] transition-transform duration-300 ${
+        visible ? "translate-y-0" : "translate-y-full"
+      }`}
+    >
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 text-white">
+        <div className="min-w-0">
+          <p className="text-base font-bold leading-tight sm:text-lg">🎁 1500 Recetas + 7 Bonos Gratis</p>
+          <p className="text-xs opacity-90 sm:text-sm">Oferta termina hoy</p>
+        </div>
+        <a
+          href="#oferta"
+          className="whitespace-nowrap rounded-full bg-white px-8 py-3 text-sm font-bold text-emerald-700 shadow-lg sm:text-base"
+        >
+          COMPRAR AHORA - $5
+        </a>
+      </div>
+    </div>
   );
 }
 
@@ -376,42 +472,17 @@ function QueRecibir() {
 
 function Bonos() {
   const bonuses = [
-    {
-      icon: ShoppingCart,
-      title: "Lista de Compras Antiinflamatoria",
-      desc: "Guía práctica para saber qué ingredientes comprar, organizar la despensa y facilitar la preparación de las recetas.",
-      benefit: "Ahorra tiempo y compra con más claridad.",
-      value: "$17",
-      number: "Bono 1",
-      image: listaCompras,
-      alt: "Lista de compras antiinflamatoria con alimentos saludables",
-    },
-    {
-      icon: CalendarDays,
-      title: "Plan Nutricional Antiinflamatorio",
-      desc: "Plan simple para comenzar con más claridad, organizar los primeros días y crear una rutina alimentaria más ligera.",
-      benefit: "Una estructura clara para empezar.",
-      value: "$27",
-      number: "Bono 2",
-      image: reset14Dias,
-      alt: "Plan de 14 días antiinflamatorio organizado en calendario",
-    },
-    {
-      icon: ArrowRightLeft,
-      title: "Guía de Sustituciones Saludables",
-      desc: "Aprende a adaptar recetas, cambiar ingredientes y encontrar alternativas más saludables, accesibles y prácticas.",
-      benefit: "Personaliza las recetas según lo que tengas.",
-      value: "$17",
-      number: "Bono 3",
-      image: guiaSustituciones,
-      alt: "Guía de sustituciones saludables de ingredientes",
-    },
+    { icon: "📋", title: "Guía de Compra Inteligente", desc: "Lista organizada para no olvidar ingredientes antiinflamatorios", value: "$17", highlight: false },
+    { icon: "📅", title: "Tus Primeros 7 Días Paso a Paso", desc: "Plan simple para comenzar sin pensar qué cocinar", value: "$27", highlight: false },
+    { icon: "🔄", title: "Manual S.O.S. de Ingredientes", desc: "Sustituciones cuando falta UN ingrediente", value: "$17", highlight: false },
+    { icon: "🍰", title: "50 Postres Sin Culpa", desc: "Tortas, brownies y dulces antiinflamatorios", value: "$27", highlight: true },
+    { icon: "⚡", title: "Snacks Express en 5 Minutos", desc: "Para cuando no tienes tiempo ni ganas de cocinar", value: "$17", highlight: true },
+    { icon: "🥤", title: "Batidos Antiinflamatorios", desc: "30 combinaciones para energía natural", value: "$17", highlight: true },
+    { icon: "👨‍👩‍👧", title: "Recetas para Toda la Familia", desc: "Platos que gustan a niños y adultos exigentes", value: "$27", highlight: true },
   ];
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-secondary/30 via-background to-secondary/20 px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-      <div className="pointer-events-none absolute -top-24 -left-24 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-24 -right-24 h-80 w-80 rounded-full bg-accent/10 blur-3xl" />
       <div className="relative mx-auto max-w-6xl">
         <div className="text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
@@ -422,53 +493,50 @@ function Bonos() {
             Bonos especiales incluidos
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-base text-muted-foreground">
-            Además del recetario, recibes 3 guías complementarias para aprovechar mejor el material.
+            Además del recetario, recibes 7 guías complementarias para aprovechar mejor el material.
           </p>
         </div>
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {bonuses.map((bonus) => (
-            <div
-              key={bonus.title}
-              className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-card shadow-[0_6px_24px_-10px_rgba(0,0,0,0.1)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_16px_32px_-14px_rgba(0,0,0,0.15)]"
-            >
-              <div className="absolute right-3 top-3 z-10 rounded-full bg-primary px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-primary-foreground shadow-sm">
-                {bonus.number}
-              </div>
-              <div className="relative h-36 w-full overflow-hidden sm:h-40">
-                <img
-                  src={bonus.image}
-                  alt={bonus.alt}
-                  width={1024}
-                  height={640}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
-              </div>
-              <div className="flex flex-1 flex-col p-4 pt-3">
-                <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-primary/70 shadow-md shadow-primary/20 transition-transform group-hover:scale-110">
-                  <bonus.icon className="h-4 w-4 text-primary-foreground" strokeWidth={2} />
+
+        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {bonuses.map((b) => {
+            const isYellow = b.highlight;
+            return (
+              <div
+                key={b.title}
+                className={`rounded-xl border-2 p-6 text-center shadow-sm transition-transform hover:-translate-y-1 ${
+                  isYellow
+                    ? "border-amber-500 bg-gradient-to-b from-amber-100 to-amber-200"
+                    : "border-emerald-500 bg-gradient-to-b from-emerald-50 to-emerald-100"
+                }`}
+              >
+                <div
+                  className={`mx-auto flex h-20 w-20 items-center justify-center rounded-xl text-4xl ${
+                    isYellow ? "bg-amber-500" : "bg-emerald-500"
+                  }`}
+                >
+                  {b.icon}
                 </div>
-                <h3 className="font-heading text-base font-bold leading-tight text-foreground">
-                  {bonus.title}
+                <h3 className={`mt-4 text-lg font-bold ${isYellow ? "text-amber-900" : "text-emerald-900"}`}>
+                  {b.title}
                 </h3>
-                <p className="mt-2 flex-1 text-xs leading-relaxed text-muted-foreground">
-                  {bonus.desc}
+                <p className={`mt-2 text-sm ${isYellow ? "text-amber-800" : "text-emerald-800"}`}>
+                  {b.desc}
                 </p>
-                <div className="mt-3 rounded-lg bg-secondary/60 p-3">
-                  <p className="text-xs font-medium text-foreground">
-                    <span className="text-primary">✓</span> {bonus.benefit}
-                  </p>
-                </div>
-                <div className="mt-3 flex items-center justify-between border-t border-border/60 pt-3">
-                  <p className="text-xs text-muted-foreground">
-                    Valor normal: <span className="text-sm font-bold text-red-500 line-through">{bonus.value}</span>
-                  </p>
-                  <span className="text-xs font-bold uppercase tracking-wide text-green-600">Gratis</span>
-                </div>
+                <p className="mt-3 text-sm">
+                  Valor: <span className="text-red-600 line-through">{b.value}</span>{" "}
+                  <span className={`font-bold ${isYellow ? "text-amber-600" : "text-emerald-600"}`}>
+                    GRATIS{isYellow ? " 🎁" : ""}
+                  </span>
+                </p>
               </div>
-            </div>
-          ))}
+            );
+          })}
+        </div>
+
+        <div className="mx-auto my-10 max-w-2xl rounded-xl border-[3px] border-dashed border-amber-500 bg-gradient-to-b from-amber-100 to-amber-200 p-8 text-center">
+          <p className="text-lg text-amber-900">Valor total de los bonos:</p>
+          <p className="mt-2 text-4xl font-bold text-red-600 line-through">$132</p>
+          <p className="mt-2 text-3xl font-bold text-emerald-600">HOY GRATIS 🎁</p>
         </div>
       </div>
     </section>
@@ -1055,6 +1123,21 @@ function PreguntasFrecuentes() {
       answer:
         "No. Este material es educativo e informativo y no sustituye la orientación de un profesional de la salud. Antes de hacer cambios importantes en tu alimentación, consulta a un nutricionista o médico.",
     },
+    {
+      question: "¿Por qué el precio es tan accesible?",
+      answer:
+        "Porque es un producto 100% digital. No hay costos de envío, impresión, almacenamiento ni intermediarios. Todo el ahorro se traslada a ti. Además, queremos que TODAS las mujeres puedan acceder a alimentación antiinflamatoria, sin importar su presupuesto.",
+    },
+    {
+      question: "¿Los ingredientes se consiguen en mi país?",
+      answer:
+        "¡Sí! Las recetas utilizan ingredientes comunes disponibles en supermercados de toda América Latina. Evitamos ingredientes exóticos o difíciles de conseguir. Y si algo específico no se encuentra, el bono 'Manual S.O.S.' te enseña sustituciones perfectas.",
+    },
+    {
+      question: "¿Cuánto tiempo tengo acceso al material?",
+      answer:
+        "PARA SIEMPRE. Pagas una sola vez y el acceso es de por vida. Todas las actualizaciones y recetas nuevas que agreguemos también serán tuyas sin costo adicional. Es tuyo para siempre.",
+    },
   ];
 
   return (
@@ -1149,22 +1232,6 @@ function DoloresComunes() {
       ),
     },
     {
-      emoji: "😤",
-      text: (
-        <>
-          ¿Sientes que haces el esfuerzo de cuidarte pero sigues con <strong>falta de energía y pesadez</strong>?
-        </>
-      ),
-    },
-    {
-      emoji: "😰",
-      text: (
-        <>
-          ¿Empiezas a comer saludable… pero terminas abandonando porque no es práctico ni sostenible?
-        </>
-      ),
-    },
-    {
       emoji: "🍬",
       text: (
         <>
@@ -1200,6 +1267,11 @@ function DoloresComunes() {
             </li>
           ))}
         </ul>
+
+        <p className="mt-8 text-center text-lg font-semibold text-emerald-700">
+          ¿Te identificaste con alguna? Sigue leyendo... 👇
+        </p>
+
       </div>
     </section>
   );
