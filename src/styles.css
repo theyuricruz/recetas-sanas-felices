@@ -144,6 +144,7 @@
   html {
     font-family: var(--font-sans);
     scroll-behavior: smooth;
+    font-weight: 400;
   }
 
   h1,
@@ -153,10 +154,29 @@
   h5,
   h6 {
     font-family: var(--font-heading);
+    font-weight: 400;
+    letter-spacing: -0.01em;
   }
 
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-feature-settings: "ss01", "cv11";
   }
 }
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+@utility hairline {
+  height: 1px;
+  width: 3rem;
+  background-color: var(--color-accent);
+}
+
