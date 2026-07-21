@@ -216,14 +216,14 @@ function PromoBar() {
     setToday(formatted.charAt(0).toUpperCase() + formatted.slice(1));
   }, []);
   return (
-    <div className="sticky top-0 z-40 w-full border-b border-accent/40 bg-secondary/60 text-foreground backdrop-blur">
+    <div className="sticky top-0 z-40 w-full border-b border-red-800/40 bg-red-700 text-white backdrop-blur">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-2 px-4 py-2 text-center sm:flex-row sm:gap-6">
-        <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-primary">
-          <span className="inline-block h-1 w-1 rounded-full bg-primary" />
+        <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-white">
+          <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-white" />
           <span>Edición especial · descuento activo hoy</span>
         </div>
         {today && (
-          <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+          <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-white/85">
             <CalendarDays className="h-3.5 w-3.5" />
             <span>{today}</span>
           </div>
