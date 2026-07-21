@@ -216,16 +216,16 @@ function PromoBar() {
     setToday(formatted.charAt(0).toUpperCase() + formatted.slice(1));
   }, []);
   return (
-    <div className="sticky top-0 z-40 w-full bg-gradient-to-r from-red-600 via-red-500 to-red-700 text-white shadow-md">
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-2 px-4 py-2.5 text-center sm:flex-row sm:gap-4">
-        <div className="flex items-center gap-2 text-sm font-semibold sm:text-base">
-          <Flame className="h-4 w-4 shrink-0 animate-pulse text-yellow-300 sm:h-5 sm:w-5" />
-          <span>¡Descuento especial solo por hoy!</span>
+    <div className="sticky top-0 z-40 w-full border-b border-accent/40 bg-secondary/60 text-foreground backdrop-blur">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-2 px-4 py-2 text-center sm:flex-row sm:gap-6">
+        <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-primary">
+          <span className="inline-block h-1 w-1 rounded-full bg-primary" />
+          <span>Edición especial · descuento activo hoy</span>
         </div>
         {today && (
-          <div className="flex items-center gap-2 text-xs opacity-95 sm:text-sm">
-            <CalendarDays className="h-4 w-4" />
-            <span className="font-medium">{today}</span>
+          <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+            <CalendarDays className="h-3.5 w-3.5" />
+            <span>{today}</span>
           </div>
         )}
       </div>
