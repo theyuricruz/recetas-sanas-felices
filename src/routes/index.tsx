@@ -692,93 +692,88 @@ function Oferta() {
 
       {/* Upsell popup for basic plan click */}
       <Dialog open={openUpsell} onOpenChange={setOpenUpsell}>
-        <DialogContent className="max-w-sm border-0 p-0 sm:rounded-2xl">
-          <div className="relative overflow-hidden rounded-t-2xl bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 px-5 py-4 text-center text-white">
-            <span className="inline-block rounded-full bg-white/20 px-3 py-1 text-[10px] font-bold uppercase tracking-wider backdrop-blur-sm">
+        <DialogContent className="max-w-sm border border-border bg-background p-0 sm:rounded-none">
+          <div className="border-b border-accent/40 bg-secondary/60 px-6 py-6 text-center">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-primary">
               Oportunidad única
             </span>
-            <DialogHeader className="mt-2 text-center">
-              <DialogTitle className="text-xl font-bold leading-tight text-white">
-                ¡Espera! Por $4.90 más, llevas los 3 bonos exclusivos
+            <DialogHeader className="mt-3 text-center">
+              <DialogTitle className="font-heading text-2xl font-normal leading-[1.15] text-primary">
+                Espera. Por <span className="italic">$4.90 más</span> llevas los 3 bonos exclusivos.
               </DialogTitle>
             </DialogHeader>
-            <div className="mt-3 inline-flex items-center gap-1.5 rounded-lg bg-white/15 px-3 py-1.5 backdrop-blur-sm">
-              <Clock className="h-3.5 w-3.5" />
-              <span className="text-xs font-semibold tabular-nums">
+            <div className="mt-4 inline-flex items-center gap-2 text-[11px] font-light uppercase tracking-[0.2em] text-muted-foreground">
+              <Clock className="h-3 w-3" />
+              <span className="tabular-nums">
                 {String(upsellMinutes).padStart(2, "0")}:{String(upsellSeconds).padStart(2, "0")}
               </span>
             </div>
           </div>
-          <div className="px-5 pb-6 pt-4 text-center">
-            <DialogDescription className="text-sm text-muted-foreground">
-              Antes de elegir el plan básico, puedes acceder al <strong className="text-foreground">plan completo</strong> con todos los bonos por solo:
+          <div className="px-6 pb-7 pt-6 text-center">
+            <DialogDescription className="text-sm font-light leading-relaxed text-muted-foreground">
+              Accede al plan completo con los tres bonos por solo:
             </DialogDescription>
-            <div className="mt-4 flex items-center justify-center gap-2">
-              <span className="text-lg font-semibold text-red-500 line-through decoration-red-500/80">$15</span>
-              <span className="text-4xl font-extrabold tracking-tight text-green-700">$9.90</span>
+            <div className="mt-5 flex items-baseline justify-center gap-3">
+              <span className="font-heading text-4xl italic text-primary">$9.90</span>
+              <span className="text-sm font-light text-muted-foreground line-through decoration-1">$15</span>
             </div>
-            <p className="text-[11px] text-muted-foreground">pago único</p>
+            <p className="mt-1 text-[11px] uppercase tracking-[0.2em] text-muted-foreground">pago único</p>
 
-            <div className="mt-3 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2.5 text-center dark:border-amber-900/40 dark:bg-amber-900/20">
-              <p className="text-xs font-bold text-amber-800 dark:text-amber-200">
-                1.500 recetas + 3 bonos exclusivos por $4.90 más
+            <div className="mx-auto mt-5 max-w-[16rem] border-y border-accent/40 py-3">
+              <p className="text-xs font-light leading-relaxed text-foreground">
+                1.500 recetas <span className="mx-1 text-accent">+</span> 3 bonos exclusivos
+                <br />
+                <span className="text-[11px] uppercase tracking-[0.18em] text-primary">por $4.90 más</span>
               </p>
             </div>
 
-            <p className="mt-3 flex items-center justify-center gap-1 text-[11px] font-semibold text-red-600">
-              <Clock className="h-3.5 w-3.5" />
-              Esta oferta desaparece cuando cierres esta ventana
+            <p className="mt-4 flex items-center justify-center gap-1.5 text-[11px] font-light italic text-muted-foreground">
+              <Clock className="h-3 w-3" />
+              Esta oferta desaparece al cerrar esta ventana
             </p>
 
-            <ul className="mt-4 space-y-1.5 text-left text-xs text-foreground">
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-green-600" />
-                Recetario completo antiinflamatorio
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-green-600" />
-                Bono 1: Lista de Compras Antiinflamatoria
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-green-600" />
-                Bono 2: Plan Nutricional Antiinflamatorio
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-green-600" />
-                Bono 3: Guía de Sustituciones Saludables
-              </li>
+            <ul className="mt-5 space-y-2 text-left text-xs font-light leading-relaxed text-foreground">
+              {[
+                "Recetario completo antiinflamatorio",
+                "Bono 1: Lista de Compras Antiinflamatoria",
+                "Bono 2: Plan Nutricional Antiinflamatorio",
+                "Bono 3: Guía de Sustituciones Saludables",
+              ].map((li) => (
+                <li key={li} className="flex items-start gap-3">
+                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary" />
+                  <span>{li}</span>
+                </li>
+              ))}
             </ul>
 
-            <div className="mt-5 space-y-2">
-              <Button
-                asChild
-                size="sm"
-                className="h-12 w-full rounded-xl bg-gradient-to-r from-green-700 via-green-600 to-amber-500 text-xs font-bold uppercase tracking-wider text-white shadow-lg shadow-green-900/20 transition-transform hover:scale-[1.02]"
+            <div className="mt-6 space-y-3">
+              <a
+                href="https://pay.hotmart.com/X106687062E?off=g05ticx5"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpenUpsell(false)}
+                className="block w-full bg-primary py-4 text-[11px] font-semibold uppercase tracking-[0.24em] text-primary-foreground transition-colors duration-500 hover:bg-foreground"
               >
-                <a href="https://pay.hotmart.com/X106687062E?off=g05ticx5" target="_blank" rel="noopener noreferrer" onClick={() => setOpenUpsell(false)}>
-                  Sí, quiero el Acceso Completo por $9.90
-                </a>
-              </Button>
-              <Button
-                asChild
-                size="sm"
-                variant="ghost"
-                className="h-10 w-full text-[11px] font-semibold text-muted-foreground hover:text-foreground"
+                Sí, quiero el acceso completo por $9.90
+              </a>
+              <a
+                href="https://pay.hotmart.com/N106642669U?checkoutMode=10"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpenUpsell(false)}
+                className="block w-full py-3 text-[11px] font-light uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-foreground"
               >
-                <a href="https://pay.hotmart.com/N106642669U?checkoutMode=10" target="_blank" rel="noopener noreferrer" onClick={() => setOpenUpsell(false)}>
-                  No, quiero el Acceso Básico por $5
-                </a>
-              </Button>
+                No, quiero el acceso básico por $5
+              </a>
             </div>
-            <p className="mt-3 flex items-center justify-center gap-1.5 text-[10px] text-muted-foreground">
+            <p className="mt-4 flex items-center justify-center gap-1.5 text-[10px] font-light uppercase tracking-[0.18em] text-muted-foreground">
               <ShieldCheck className="h-3 w-3" />
-              Compra 100% segura · Garantía de 30 días
+              Compra segura · Garantía de 30 días
             </p>
           </div>
         </DialogContent>
       </Dialog>
     </section>
-
   );
 }
 
