@@ -63,6 +63,7 @@ import avatarAna from "@/assets/avatar-ana.png";
 import avatarValentina from "@/assets/avatar-valentina.png";
 import avatarDaniela from "@/assets/avatar-daniela.png";
 import avatarCarolina from "@/assets/avatar-carolina.png";
+import sealGarantia from "@/assets/seal-garantia.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
