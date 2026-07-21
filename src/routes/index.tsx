@@ -183,20 +183,20 @@ function StickyCta() {
 
   return (
     <div
-      className={`fixed inset-x-0 bottom-0 z-[9999] bg-gradient-to-r from-emerald-500 to-emerald-600 px-5 py-3 shadow-[0_-10px_30px_-5px_rgba(0,0,0,0.3)] transition-transform duration-300 ${
+      className={`fixed inset-x-0 bottom-0 z-[9999] border-t border-accent/40 bg-primary px-5 py-3 text-primary-foreground shadow-[0_-10px_30px_-10px_rgba(45,58,40,0.25)] transition-transform duration-500 ${
         visible ? "translate-y-0" : "translate-y-full"
       }`}
     >
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 text-white">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3">
         <div className="min-w-0">
-          <p className="text-base font-bold leading-tight sm:text-lg">🎁 1500 Recetas + 7 Bonos Gratis</p>
-          <p className="text-xs opacity-90 sm:text-sm">Oferta termina hoy</p>
+          <p className="font-heading text-base leading-tight sm:text-lg">1500 recetas + 7 bonos incluidos</p>
+          <p className="text-[11px] uppercase tracking-[0.2em] text-primary-foreground/70">Oferta editorial · termina hoy</p>
         </div>
         <a
           href="#oferta"
-          className="whitespace-nowrap rounded-full bg-white px-8 py-3 text-sm font-bold text-emerald-700 shadow-lg sm:text-base"
+          className="whitespace-nowrap bg-primary-foreground px-8 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary transition-colors hover:bg-accent hover:text-foreground sm:text-sm"
         >
-          COMPRAR AHORA - $5
+          Obtener acceso — $5
         </a>
       </div>
     </div>
