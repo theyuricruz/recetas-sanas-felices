@@ -1000,59 +1000,35 @@ function Testimonios() {
 
 
 function Garantia() {
-  const bullets = [
-    { icon: Lock, text: "Pago protegido con encriptación segura" },
-    { icon: ShieldCheck, text: "Tu información nunca es compartida con terceros" },
-    { icon: Clock, text: "30 días completos para probar todo el material" },
-    { icon: CheckCircle2, text: "Devolución simple: solo escríbenos y te reembolsamos" },
-  ];
-
   return (
-    <section className="relative overflow-hidden px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+    <section className="relative overflow-hidden px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
       <div className="absolute inset-0 bg-gradient-to-br from-secondary/40 via-background to-secondary/30" />
-      <div className="pointer-events-none absolute top-1/2 left-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/8 blur-3xl" />
 
-      <div className="relative mx-auto max-w-3xl">
-        <div className="rounded-3xl border border-border/60 bg-card/80 p-6 shadow-xl shadow-foreground/5 backdrop-blur-sm sm:p-10">
-          <div className="flex flex-col items-center text-center">
-            <div className="flex flex-wrap items-center justify-center gap-2">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
-                <ShieldCheck className="h-3.5 w-3.5" />
-                Compra protegida
-              </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-                <Lock className="h-3.5 w-3.5" />
-                100% seguro
-              </span>
-            </div>
-
-            <h2 className="mt-5 font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
+      <div className="relative mx-auto max-w-2xl">
+        <div className="flex flex-col items-center gap-5 rounded-2xl border border-border/60 bg-card/80 p-6 text-center shadow-lg shadow-foreground/5 backdrop-blur-sm sm:flex-row sm:text-left">
+          <img
+            src={sealGarantia}
+            alt="Sello de garantía 30 días"
+            width={140}
+            height={140}
+            loading="lazy"
+            className="h-28 w-28 shrink-0 sm:h-32 sm:w-32"
+          />
+          <div className="flex-1">
+            <span className="eyebrow">Compra protegida · 100% seguro</span>
+            <h2 className="mt-2 font-heading text-2xl leading-tight text-primary sm:text-3xl">
               Garantía incondicional de 30 días
             </h2>
-            <p className="mt-3 max-w-xl text-base leading-relaxed text-muted-foreground">
-              Accede al material, revísalo con calma y si sientes que no es para ti, te devolvemos
-              el 100% de tu inversión. Sin preguntas.
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              Accede al material, revísalo con calma y si no es para ti, te devolvemos el 100%. Sin preguntas.
             </p>
-
-            <ul className="mt-6 grid w-full gap-3 text-left sm:grid-cols-2">
-              {bullets.map((item) => (
-                <li key={item.text} className="flex items-start gap-3 py-2">
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                    <item.icon className="h-4 w-4" strokeWidth={2.2} />
-                  </div>
-                  <p className="text-sm leading-snug text-foreground">{item.text}</p>
-                </li>
-              ))}
-            </ul>
-
-            <Button
+            <button
               onClick={scrollToOferta}
-              size="lg"
-              className="mt-8 h-12 px-8 text-base font-semibold shadow-lg shadow-primary/25 transition-all hover:scale-105 hover:shadow-xl hover:shadow-primary/30"
+              className="mt-4 inline-flex items-center gap-2 bg-primary px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-foreground transition-colors duration-500 hover:bg-foreground"
             >
               Sí, quiero probarlo sin riesgo
-              <ArrowRightLeft className="ml-2 h-4 w-4" />
-            </Button>
+              <ArrowRightLeft className="h-3.5 w-3.5" />
+            </button>
           </div>
         </div>
       </div>
