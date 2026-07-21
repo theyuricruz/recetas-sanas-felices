@@ -112,15 +112,17 @@ function Index() {
 function CtaAfterComparison() {
   return (
     <section className="px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto my-10 max-w-4xl rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 px-6 py-10 text-center shadow-xl">
-        <h2 className="text-2xl font-bold text-white sm:text-3xl">
-          Empieza a desinflamarte hoy
+      <div className="mx-auto my-16 max-w-4xl border-y border-accent/40 bg-secondary/30 px-6 py-14 text-center">
+        <span className="eyebrow">Empieza hoy</span>
+        <h2 className="mt-4 font-heading text-3xl leading-tight text-primary sm:text-4xl">
+          Empieza a desinflamarte <span className="italic">desde esta semana</span>
         </h2>
+        <div className="hairline mx-auto mt-6" />
         <a
           href="#oferta"
-          className="mt-6 inline-block rounded-full bg-white px-12 py-4 text-lg font-bold text-emerald-700 shadow-lg transition-transform hover:scale-105"
+          className="mt-8 inline-block bg-primary px-12 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground transition-colors duration-500 hover:bg-accent hover:text-foreground"
         >
-          QUIERO MIS 1500 RECETAS →
+          Quiero mis 1500 recetas
         </a>
       </div>
     </section>
@@ -153,23 +155,18 @@ function UrgencyBar() {
 
   return (
     <section className="px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto my-12 max-w-4xl rounded-xl border-[3px] border-yellow-400 bg-gradient-to-r from-red-600 to-red-700 p-6 text-center text-white shadow-2xl">
-        <h3 className="text-xl font-bold uppercase sm:text-2xl">
-          🔥 OFERTA ESPECIAL - SOLO HOY {weekday}
-        </h3>
-        <div className="my-5 rounded-lg bg-black/30 px-4 py-4">
-          <p className="text-sm">⏰ Esta oferta termina en:</p>
-          <p className="mt-1 font-mono text-3xl font-bold tabular-nums sm:text-4xl">
-            {mm}:{ss}
-          </p>
-        </div>
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          <div className="rounded-lg bg-black/30 px-5 py-3 text-sm font-semibold">
-            👥 {viewers} personas viendo esto ahora
-          </div>
-          <div className="rounded-lg bg-black/30 px-5 py-3 text-sm font-semibold">
-            ⚠️ Últimas <span className="font-bold text-yellow-400">12</span> unidades con bonos
-          </div>
+      <div className="mx-auto my-16 max-w-4xl border-y border-primary/30 bg-primary px-6 py-10 text-center text-primary-foreground">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-foreground/70">
+          Edición limitada — solo {weekday}
+        </span>
+        <p className="mt-5 font-heading text-3xl italic tabular-nums sm:text-4xl">
+          {mm}<span className="opacity-50">:</span>{ss}
+        </p>
+        <div className="mx-auto mt-4 h-px w-12 bg-primary-foreground/40" />
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs font-light tracking-wide text-primary-foreground/85">
+          <span>{viewers} personas visualizando ahora</span>
+          <span className="hidden h-3 w-px bg-primary-foreground/30 sm:block" />
+          <span>Últimas <span className="font-semibold text-primary-foreground">12</span> unidades con bonos</span>
         </div>
       </div>
     </section>
@@ -186,20 +183,20 @@ function StickyCta() {
 
   return (
     <div
-      className={`fixed inset-x-0 bottom-0 z-[9999] bg-gradient-to-r from-emerald-500 to-emerald-600 px-5 py-3 shadow-[0_-10px_30px_-5px_rgba(0,0,0,0.3)] transition-transform duration-300 ${
+      className={`fixed inset-x-0 bottom-0 z-[9999] border-t border-accent/40 bg-primary px-5 py-3 text-primary-foreground shadow-[0_-10px_30px_-10px_rgba(45,58,40,0.25)] transition-transform duration-500 ${
         visible ? "translate-y-0" : "translate-y-full"
       }`}
     >
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 text-white">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3">
         <div className="min-w-0">
-          <p className="text-base font-bold leading-tight sm:text-lg">🎁 1500 Recetas + 7 Bonos Gratis</p>
-          <p className="text-xs opacity-90 sm:text-sm">Oferta termina hoy</p>
+          <p className="font-heading text-base leading-tight sm:text-lg">1500 recetas + 7 bonos incluidos</p>
+          <p className="text-[11px] uppercase tracking-[0.2em] text-primary-foreground/70">Oferta editorial · termina hoy</p>
         </div>
         <a
           href="#oferta"
-          className="whitespace-nowrap rounded-full bg-white px-8 py-3 text-sm font-bold text-emerald-700 shadow-lg sm:text-base"
+          className="whitespace-nowrap bg-primary-foreground px-8 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary transition-colors hover:bg-accent hover:text-foreground sm:text-sm"
         >
-          COMPRAR AHORA - $5
+          Obtener acceso — $5
         </a>
       </div>
     </div>
@@ -219,16 +216,16 @@ function PromoBar() {
     setToday(formatted.charAt(0).toUpperCase() + formatted.slice(1));
   }, []);
   return (
-    <div className="sticky top-0 z-40 w-full bg-gradient-to-r from-red-600 via-red-500 to-red-700 text-white shadow-md">
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-2 px-4 py-2.5 text-center sm:flex-row sm:gap-4">
-        <div className="flex items-center gap-2 text-sm font-semibold sm:text-base">
-          <Flame className="h-4 w-4 shrink-0 animate-pulse text-yellow-300 sm:h-5 sm:w-5" />
-          <span>¡Descuento especial solo por hoy!</span>
+    <div className="sticky top-0 z-40 w-full border-b border-accent/40 bg-secondary/60 text-foreground backdrop-blur">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-2 px-4 py-2 text-center sm:flex-row sm:gap-6">
+        <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-primary">
+          <span className="inline-block h-1 w-1 rounded-full bg-primary" />
+          <span>Edición especial · descuento activo hoy</span>
         </div>
         {today && (
-          <div className="flex items-center gap-2 text-xs opacity-95 sm:text-sm">
-            <CalendarDays className="h-4 w-4" />
-            <span className="font-medium">{today}</span>
+          <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+            <CalendarDays className="h-3.5 w-3.5" />
+            <span>{today}</span>
           </div>
         )}
       </div>
@@ -482,61 +479,45 @@ function Bonos() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-secondary/30 via-background to-secondary/20 px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+    <section className="relative bg-secondary/40 px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="relative mx-auto max-w-6xl">
         <div className="text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
-            <Star className="h-3.5 w-3.5" />
-            Solo por tiempo limitado
-          </span>
-          <h2 className="mt-3 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            Bonos especiales incluidos
+          <span className="eyebrow">Complementos exclusivos</span>
+          <h2 className="mt-5 font-heading text-4xl leading-[1.05] text-primary sm:text-5xl">
+            Bonos de <span className="italic">regalo</span>
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-base text-muted-foreground">
-            Además del recetario, recibes 7 guías complementarias para aprovechar mejor el material.
+          <div className="hairline mx-auto mt-6" />
+          <p className="mx-auto mt-6 max-w-xl text-base font-light leading-relaxed text-muted-foreground">
+            Hemos preparado siete guías complementarias para asegurar que tu transición a una vida antiinflamatoria sea fluida, elegante y duradera.
           </p>
         </div>
 
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {bonuses.map((b) => {
-            const isYellow = b.highlight;
-            return (
-              <div
-                key={b.title}
-                className={`rounded-xl border-2 p-6 text-center shadow-sm transition-transform hover:-translate-y-1 ${
-                  isYellow
-                    ? "border-amber-500 bg-gradient-to-b from-amber-100 to-amber-200"
-                    : "border-emerald-500 bg-gradient-to-b from-emerald-50 to-emerald-100"
-                }`}
-              >
-                <div
-                  className={`mx-auto flex h-20 w-20 items-center justify-center rounded-xl text-4xl ${
-                    isYellow ? "bg-amber-500" : "bg-emerald-500"
-                  }`}
-                >
-                  {b.icon}
-                </div>
-                <h3 className={`mt-4 text-lg font-bold ${isYellow ? "text-amber-900" : "text-emerald-900"}`}>
-                  {b.title}
-                </h3>
-                <p className={`mt-2 text-sm ${isYellow ? "text-amber-800" : "text-emerald-800"}`}>
-                  {b.desc}
-                </p>
-                <p className="mt-3 text-sm">
-                  Valor: <span className="text-red-600 line-through">{b.value}</span>{" "}
-                  <span className={`font-bold ${isYellow ? "text-amber-600" : "text-emerald-600"}`}>
-                    GRATIS{isYellow ? " 🎁" : ""}
-                  </span>
-                </p>
-              </div>
-            );
-          })}
+        <div className="mt-16 grid gap-y-12 gap-x-10 sm:grid-cols-2 lg:grid-cols-3">
+          {bonuses.map((b, i) => (
+            <div key={b.title} className="flex flex-col gap-3">
+              <span className="text-[11px] font-semibold tracking-[0.28em] text-accent">
+                {String(i + 1).padStart(2, "0")} /
+              </span>
+              <h3 className="font-heading text-xl leading-snug text-foreground">
+                {b.title}
+              </h3>
+              <p className="text-sm font-light leading-relaxed text-muted-foreground">
+                {b.desc}
+              </p>
+              <p className="mt-1 text-[11px] uppercase tracking-[0.2em] text-primary">
+                Valor <span className="line-through opacity-60">{b.value}</span> · incluido
+              </p>
+            </div>
+          ))}
         </div>
 
-        <div className="mx-auto my-10 max-w-2xl rounded-xl border-[3px] border-dashed border-amber-500 bg-gradient-to-b from-amber-100 to-amber-200 p-8 text-center">
-          <p className="text-lg text-amber-900">Valor total de los bonos:</p>
-          <p className="mt-2 text-4xl font-bold text-red-600 line-through">$132</p>
-          <p className="mt-2 text-3xl font-bold text-emerald-600">HOY GRATIS 🎁</p>
+        <div className="mx-auto mt-20 max-w-xl border-y border-accent/40 py-8 text-center">
+          <p className="eyebrow">Valor total de los bonos</p>
+          <p className="mt-3 font-heading text-5xl italic text-primary">
+            <span className="line-through decoration-1 opacity-40">$132</span>
+            <span className="mx-3 text-2xl not-italic text-muted-foreground">·</span>
+            hoy incluido
+          </p>
         </div>
       </div>
     </section>
@@ -559,14 +540,11 @@ function Countdown() {
   const seconds = timeLeft % 60;
 
   return (
-    <div className="rounded-xl bg-black/10 px-4 py-2.5 text-center">
-      <p className="text-[11px] font-medium uppercase tracking-wider opacity-90">
-        Oferta especial — últimos 15 minutos
-      </p>
+    <div className="text-center">
       {mounted && (
-        <div className="mt-0.5 flex justify-center gap-1 text-xl font-bold tabular-nums sm:text-2xl">
+        <div className="flex justify-center gap-1 font-heading text-4xl italic tabular-nums text-primary sm:text-5xl">
           <span>{String(minutes).padStart(2, "0")}</span>
-          <span>:</span>
+          <span className="opacity-40">:</span>
           <span>{String(seconds).padStart(2, "0")}</span>
         </div>
       )}
@@ -609,217 +587,193 @@ function Oferta() {
   ];
 
   return (
-    <section id="oferta" className="relative overflow-hidden bg-primary px-4 py-8 text-primary-foreground sm:px-6 lg:px-8 lg:py-12">
-      {/* Premium ambient background */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-primary/80 via-primary to-primary/90" />
-      <div className="pointer-events-none absolute -top-20 left-1/2 h-[400px] w-[400px] -translate-x-1/2 rounded-full bg-white/5 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-20 -right-20 h-[300px] w-[300px] rounded-full bg-accent/10 blur-3xl" />
-      <div className="pointer-events-none absolute top-1/2 -left-20 h-[200px] w-[200px] rounded-full bg-white/5 blur-3xl" />
-      <div className="relative mx-auto max-w-4xl">
+    <section id="oferta" className="relative bg-background px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
+      <div className="relative mx-auto max-w-5xl">
         <div className="text-center">
-          <span className="inline-block rounded-full bg-accent px-3 py-1 text-[11px] font-bold text-accent-foreground">
-            Oferta especial por tiempo limitado
-          </span>
-          <h2 className="mt-2 text-xl font-bold tracking-tight sm:text-2xl lg:text-3xl">
-            Elige Tu Oferta
+          <span className="eyebrow">Oferta editorial · tiempo limitado</span>
+          <h2 className="mt-5 font-heading text-4xl leading-[1.05] text-primary sm:text-5xl lg:text-6xl">
+            Elige tu <span className="italic">camino</span>
           </h2>
-          <p className="mx-auto mt-2 max-w-2xl text-sm opacity-90">
-            Selecciona la opción que mejor se adapte a ti.
+          <div className="hairline mx-auto mt-6" />
+          <p className="mx-auto mt-6 max-w-lg text-base font-light leading-relaxed text-muted-foreground">
+            Selecciona la opción que mejor se adapte a ti. Acceso inmediato tras la compra.
           </p>
         </div>
 
-        <div className="mx-auto mt-4 max-w-md">
-          <Countdown />
+        <div className="mx-auto mt-10 max-w-md">
+          <div className="border-y border-accent/40 py-4 text-center">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-primary">
+              Últimos 15 minutos con este precio
+            </p>
+            <div className="mt-3">
+              <Countdown />
+            </div>
+          </div>
         </div>
 
-        <div className="mt-5 grid gap-4 lg:grid-cols-2">
+        <div className="mt-16 grid gap-8 lg:grid-cols-2 lg:gap-12">
           {/* Basic offer */}
-          <div className="relative flex flex-col overflow-hidden rounded-2xl bg-white text-foreground shadow-xl ring-1 ring-black/5">
-            {/* Header */}
-            <div className="border-b border-black/5 bg-gradient-to-b from-white to-secondary/30 px-5 py-3 text-center">
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
-                Básico
+          <div className="relative flex flex-col border border-border bg-background p-10 transition-colors duration-500 hover:border-accent lg:p-12">
+            <span className="eyebrow">Plan esencial</span>
+            <h3 className="mt-4 font-heading text-3xl text-primary">Recetario</h3>
+            <p className="mt-2 text-sm font-light text-muted-foreground">
+              Ideal para dar los primeros pasos hacia una vida antiinflamatoria.
+            </p>
+            <div className="mt-8 flex items-baseline gap-3">
+              <span className="font-heading text-5xl text-foreground">$5</span>
+              <span className="text-sm font-light text-muted-foreground">
+                <span className="line-through decoration-1 opacity-60">$9.90</span> · pago único
               </span>
             </div>
-            {/* Price */}
-            <div className="px-5 pt-5 text-center">
-              <div className="flex items-baseline justify-center gap-2">
-                <span className="text-lg font-semibold text-red-500 line-through decoration-red-500/80">$9.90</span>
-                <span className="text-4xl font-extrabold tracking-tight text-foreground">$5</span>
-              </div>
-              <p className="mt-1 text-[11px] font-medium text-muted-foreground">pago único</p>
-            </div>
-            {/* Items */}
-            <div className="flex flex-1 flex-col px-5 pb-5 pt-4">
-              <ul className="space-y-2">
-                {basicItems.map((item) => (
-                  <li key={item.text} className="flex items-start gap-2.5">
-                    {item.included ? (
-                      <span className="mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded-full bg-green-100">
-                        <CheckCircle2 className="h-3 w-3 text-green-600" strokeWidth={3} />
-                      </span>
-                    ) : (
-                      <span className="mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded-full bg-red-100">
-                        <XCircle className="h-3 w-3 text-red-500" strokeWidth={3} />
-                      </span>
-                    )}
-                    <span className={`text-xs leading-relaxed ${item.included ? "text-foreground" : "text-muted-foreground line-through"}`}>
-                      {item.text}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-              <Button
-                size="sm"
-                variant="outline"
-                className="mt-5 h-11 w-full rounded-xl border-black/10 bg-secondary/40 px-4 text-xs font-bold uppercase tracking-wider text-foreground hover:bg-secondary/70"
-                onClick={() => setOpenUpsell(true)}
-              >
-                Obtener Acceso Básico
-              </Button>
-            </div>
+            <ul className="mt-10 flex-1 space-y-4">
+              {basicItems.map((item) => (
+                <li key={item.text} className="flex items-start gap-3 text-sm font-light leading-relaxed">
+                  {item.included ? (
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                  ) : (
+                    <XCircle className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground/50" strokeWidth={1.5} />
+                  )}
+                  <span className={item.included ? "text-foreground" : "text-muted-foreground/70 line-through"}>
+                    {item.text}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <button
+              onClick={() => setOpenUpsell(true)}
+              className="mt-10 w-full border border-primary py-4 text-xs font-semibold uppercase tracking-[0.24em] text-primary transition-colors duration-500 hover:bg-primary hover:text-primary-foreground"
+            >
+              Seleccionar
+            </button>
           </div>
 
           {/* Premium offer */}
-          <div className="relative flex flex-col overflow-hidden rounded-2xl bg-white text-foreground shadow-2xl ring-1 ring-green-900/10">
-            {/* Green banner header */}
-            <div className="relative overflow-hidden bg-gradient-to-r from-green-800 via-green-700 to-amber-500 px-5 py-3 text-center">
-              <div className="flex items-center justify-center gap-2 text-white">
-                <Crown className="h-4 w-4 text-amber-200" />
-                <span className="text-xs font-bold uppercase tracking-[0.18em]">
-                  Más popular — Mejor valor
-                </span>
-              </div>
-            </div>
-            {/* Discount pill + Price */}
-            <div className="px-5 pt-5 text-center">
-              <span className="inline-block rounded-full bg-green-50 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-green-800 ring-1 ring-green-800/10">
-                Ahorras más del 40%
+          <div className="relative flex flex-col border border-primary bg-card p-10 shadow-[0_30px_80px_-30px_rgba(45,58,40,0.25)] lg:-mt-4 lg:p-12">
+            <span className="absolute right-10 top-0 -translate-y-1/2 bg-accent px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.28em] text-foreground">
+              Más popular
+            </span>
+            <span className="eyebrow">Plan completo</span>
+            <h3 className="mt-4 font-heading text-3xl text-primary">
+              Recetario <span className="italic">+ Bonos</span>
+            </h3>
+            <p className="mt-2 text-sm font-light text-muted-foreground">
+              La experiencia completa: recetario, plan y sustituciones.
+            </p>
+            <div className="mt-8 flex items-baseline gap-3">
+              <span className="font-heading text-5xl text-primary">$15</span>
+              <span className="text-sm font-light text-muted-foreground">
+                <span className="line-through decoration-1 opacity-60">$27</span> · ahorras 40%
               </span>
-              <p className="mt-3 text-lg font-semibold text-red-500 line-through decoration-red-500/80">$27</p>
-              <p className="mt-0.5 text-5xl font-extrabold tracking-tight text-green-700">$15</p>
-              <p className="mt-1 text-[11px] font-medium text-muted-foreground">pago único</p>
             </div>
-            {/* Items */}
-            <div className="flex flex-1 flex-col px-5 pb-5 pt-4">
-              <div className="mb-4 h-px w-full bg-gradient-to-r from-transparent via-black/10 to-transparent" />
-              <ul className="space-y-2">
-                {premiumItems.map((item) => (
-                  <li key={item} className="flex items-start gap-2.5">
-                    <span className="mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded-full bg-green-100">
-                      <CheckCircle2 className="h-3 w-3 text-green-700" strokeWidth={3} />
-                    </span>
-                    <span className="text-xs leading-relaxed text-foreground">{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <Button
-                asChild
-                size="sm"
-                className="mt-5 h-12 w-full rounded-xl bg-gradient-to-r from-green-700 via-green-600 to-amber-500 px-4 text-xs font-bold uppercase tracking-wider text-white shadow-lg shadow-green-900/20 transition-transform hover:scale-[1.02]"
-              >
-                <a href="https://pay.hotmart.com/X106687062E?checkoutMode=10" target="_blank" rel="noopener noreferrer">
-                  Obtener Acceso Completo
-                </a>
-              </Button>
-              <p className="mt-3 flex items-center justify-center gap-1.5 text-[10px] text-muted-foreground">
-                <ShieldCheck className="h-3 w-3" />
-                Compra 100% segura · Garantía de 30 días
-              </p>
-            </div>
+            <ul className="mt-10 flex-1 space-y-4">
+              {premiumItems.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-sm font-light leading-relaxed text-foreground">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <a
+              href="https://pay.hotmart.com/X106687062E?checkoutMode=10"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-10 block w-full bg-primary py-4 text-center text-xs font-semibold uppercase tracking-[0.24em] text-primary-foreground transition-colors duration-500 hover:bg-foreground"
+            >
+              Obtener acceso completo
+            </a>
+            <p className="mt-5 flex items-center justify-center gap-2 text-[11px] font-light uppercase tracking-[0.18em] text-muted-foreground">
+              <ShieldCheck className="h-3 w-3" />
+              Compra segura · Garantía 30 días
+            </p>
           </div>
         </div>
       </div>
 
+
       {/* Upsell popup for basic plan click */}
       <Dialog open={openUpsell} onOpenChange={setOpenUpsell}>
-        <DialogContent className="max-w-sm border-0 p-0 sm:rounded-2xl">
-          <div className="relative overflow-hidden rounded-t-2xl bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 px-5 py-4 text-center text-white">
-            <span className="inline-block rounded-full bg-white/20 px-3 py-1 text-[10px] font-bold uppercase tracking-wider backdrop-blur-sm">
+        <DialogContent className="max-w-sm border border-border bg-background p-0 sm:rounded-none">
+          <div className="border-b border-accent/40 bg-secondary/60 px-6 py-6 text-center">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-primary">
               Oportunidad única
             </span>
-            <DialogHeader className="mt-2 text-center">
-              <DialogTitle className="text-xl font-bold leading-tight text-white">
-                ¡Espera! Por $4.90 más, llevas los 3 bonos exclusivos
+            <DialogHeader className="mt-3 text-center">
+              <DialogTitle className="font-heading text-2xl font-normal leading-[1.15] text-primary">
+                Espera. Por <span className="italic">$4.90 más</span> llevas los 3 bonos exclusivos.
               </DialogTitle>
             </DialogHeader>
-            <div className="mt-3 inline-flex items-center gap-1.5 rounded-lg bg-white/15 px-3 py-1.5 backdrop-blur-sm">
-              <Clock className="h-3.5 w-3.5" />
-              <span className="text-xs font-semibold tabular-nums">
+            <div className="mt-4 inline-flex items-center gap-2 text-[11px] font-light uppercase tracking-[0.2em] text-muted-foreground">
+              <Clock className="h-3 w-3" />
+              <span className="tabular-nums">
                 {String(upsellMinutes).padStart(2, "0")}:{String(upsellSeconds).padStart(2, "0")}
               </span>
             </div>
           </div>
-          <div className="px-5 pb-6 pt-4 text-center">
-            <DialogDescription className="text-sm text-muted-foreground">
-              Antes de elegir el plan básico, puedes acceder al <strong className="text-foreground">plan completo</strong> con todos los bonos por solo:
+          <div className="px-6 pb-7 pt-6 text-center">
+            <DialogDescription className="text-sm font-light leading-relaxed text-muted-foreground">
+              Accede al plan completo con los tres bonos por solo:
             </DialogDescription>
-            <div className="mt-4 flex items-center justify-center gap-2">
-              <span className="text-lg font-semibold text-red-500 line-through decoration-red-500/80">$15</span>
-              <span className="text-4xl font-extrabold tracking-tight text-green-700">$9.90</span>
+            <div className="mt-5 flex items-baseline justify-center gap-3">
+              <span className="font-heading text-4xl italic text-primary">$9.90</span>
+              <span className="text-sm font-light text-muted-foreground line-through decoration-1">$15</span>
             </div>
-            <p className="text-[11px] text-muted-foreground">pago único</p>
+            <p className="mt-1 text-[11px] uppercase tracking-[0.2em] text-muted-foreground">pago único</p>
 
-            <div className="mt-3 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2.5 text-center dark:border-amber-900/40 dark:bg-amber-900/20">
-              <p className="text-xs font-bold text-amber-800 dark:text-amber-200">
-                1.500 recetas + 3 bonos exclusivos por $4.90 más
+            <div className="mx-auto mt-5 max-w-[16rem] border-y border-accent/40 py-3">
+              <p className="text-xs font-light leading-relaxed text-foreground">
+                1.500 recetas <span className="mx-1 text-accent">+</span> 3 bonos exclusivos
+                <br />
+                <span className="text-[11px] uppercase tracking-[0.18em] text-primary">por $4.90 más</span>
               </p>
             </div>
 
-            <p className="mt-3 flex items-center justify-center gap-1 text-[11px] font-semibold text-red-600">
-              <Clock className="h-3.5 w-3.5" />
-              Esta oferta desaparece cuando cierres esta ventana
+            <p className="mt-4 flex items-center justify-center gap-1.5 text-[11px] font-light italic text-muted-foreground">
+              <Clock className="h-3 w-3" />
+              Esta oferta desaparece al cerrar esta ventana
             </p>
 
-            <ul className="mt-4 space-y-1.5 text-left text-xs text-foreground">
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-green-600" />
-                Recetario completo antiinflamatorio
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-green-600" />
-                Bono 1: Lista de Compras Antiinflamatoria
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-green-600" />
-                Bono 2: Plan Nutricional Antiinflamatorio
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-green-600" />
-                Bono 3: Guía de Sustituciones Saludables
-              </li>
+            <ul className="mt-5 space-y-2 text-left text-xs font-light leading-relaxed text-foreground">
+              {[
+                "Recetario completo antiinflamatorio",
+                "Bono 1: Lista de Compras Antiinflamatoria",
+                "Bono 2: Plan Nutricional Antiinflamatorio",
+                "Bono 3: Guía de Sustituciones Saludables",
+              ].map((li) => (
+                <li key={li} className="flex items-start gap-3">
+                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary" />
+                  <span>{li}</span>
+                </li>
+              ))}
             </ul>
 
-            <div className="mt-5 space-y-2">
-              <Button
-                asChild
-                size="sm"
-                className="h-12 w-full rounded-xl bg-gradient-to-r from-green-700 via-green-600 to-amber-500 text-xs font-bold uppercase tracking-wider text-white shadow-lg shadow-green-900/20 transition-transform hover:scale-[1.02]"
+            <div className="mt-6 space-y-3">
+              <a
+                href="https://pay.hotmart.com/X106687062E?off=g05ticx5"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpenUpsell(false)}
+                className="block w-full bg-primary py-4 text-[11px] font-semibold uppercase tracking-[0.24em] text-primary-foreground transition-colors duration-500 hover:bg-foreground"
               >
-                <a href="https://pay.hotmart.com/X106687062E?off=g05ticx5" target="_blank" rel="noopener noreferrer" onClick={() => setOpenUpsell(false)}>
-                  Sí, quiero el Acceso Completo por $9.90
-                </a>
-              </Button>
-              <Button
-                asChild
-                size="sm"
-                variant="ghost"
-                className="h-10 w-full text-[11px] font-semibold text-muted-foreground hover:text-foreground"
+                Sí, quiero el acceso completo por $9.90
+              </a>
+              <a
+                href="https://pay.hotmart.com/N106642669U?checkoutMode=10"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpenUpsell(false)}
+                className="block w-full py-3 text-[11px] font-light uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-foreground"
               >
-                <a href="https://pay.hotmart.com/N106642669U?checkoutMode=10" target="_blank" rel="noopener noreferrer" onClick={() => setOpenUpsell(false)}>
-                  No, quiero el Acceso Básico por $5
-                </a>
-              </Button>
+                No, quiero el acceso básico por $5
+              </a>
             </div>
-            <p className="mt-3 flex items-center justify-center gap-1.5 text-[10px] text-muted-foreground">
+            <p className="mt-4 flex items-center justify-center gap-1.5 text-[10px] font-light uppercase tracking-[0.18em] text-muted-foreground">
               <ShieldCheck className="h-3 w-3" />
-              Compra 100% segura · Garantía de 30 días
+              Compra segura · Garantía de 30 días
             </p>
           </div>
         </DialogContent>
       </Dialog>
     </section>
-
   );
 }
 
@@ -1056,7 +1010,7 @@ function Garantia() {
                 <ShieldCheck className="h-3.5 w-3.5" />
                 Compra protegida
               </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
                 <Lock className="h-3.5 w-3.5" />
                 100% seguro
               </span>
@@ -1268,8 +1222,8 @@ function DoloresComunes() {
           ))}
         </ul>
 
-        <p className="mt-8 text-center text-lg font-semibold text-emerald-700">
-          ¿Te identificaste con alguna? Sigue leyendo... 👇
+        <p className="mt-10 text-center font-heading text-lg italic text-primary">
+          ¿Te identificaste con alguna? Sigue leyendo.
         </p>
 
       </div>
@@ -1309,32 +1263,34 @@ function Comparacion() {
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {/* Bad column */}
-          <div className="rounded-3xl border border-red-200/60 bg-red-50/40 p-6 sm:p-8">
-            <div className="flex items-center gap-3">
-              <span className="grid h-10 w-10 place-items-center rounded-full bg-red-100 text-xl">❌</span>
-              <h3 className="text-lg font-bold text-foreground">Dietas extremas</h3>
-            </div>
-            <ul className="mt-5 space-y-3">
+          <div className="border border-border/70 bg-secondary/30 p-8 sm:p-10">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-muted-foreground">
+              Antes
+            </span>
+            <h3 className="mt-3 font-heading text-2xl font-normal text-foreground">Dietas extremas</h3>
+            <div className="hairline mt-4" />
+            <ul className="mt-6 space-y-4">
               {malos.map((m) => (
                 <li key={m} className="flex items-start gap-3">
-                  <XCircle className="mt-0.5 h-5 w-5 shrink-0 text-red-500" strokeWidth={2.4} />
-                  <span className="text-sm leading-relaxed text-foreground/90">{m}</span>
+                  <span className="mt-2 h-px w-4 shrink-0 bg-muted-foreground/50" />
+                  <span className="text-sm font-light leading-relaxed text-muted-foreground">{m}</span>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Good column */}
-          <div className="rounded-3xl border border-emerald-200/60 bg-emerald-50/50 p-6 shadow-lg shadow-emerald-900/5 sm:p-8">
-            <div className="flex items-center gap-3">
-              <span className="grid h-10 w-10 place-items-center rounded-full bg-emerald-100 text-xl">✅</span>
-              <h3 className="text-lg font-bold text-foreground">Alimentación antiinflamatoria práctica</h3>
-            </div>
-            <ul className="mt-5 space-y-3">
+          <div className="border border-accent/60 bg-background p-8 shadow-sm sm:p-10">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-primary">
+              Después
+            </span>
+            <h3 className="mt-3 font-heading text-2xl font-normal text-primary">Alimentación antiinflamatoria práctica</h3>
+            <div className="hairline mt-4" />
+            <ul className="mt-6 space-y-4">
               {buenos.map((b) => (
                 <li key={b} className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" strokeWidth={2.4} />
-                  <span className="text-sm leading-relaxed text-foreground/90">{b}</span>
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" strokeWidth={1.6} />
+                  <span className="text-sm font-light leading-relaxed text-foreground">{b}</span>
                 </li>
               ))}
             </ul>
@@ -1405,19 +1361,19 @@ function PurchaseNotifications() {
       role="status"
       aria-live="polite"
     >
-      <div className="flex items-start gap-3 rounded-xl border border-border/60 bg-card/95 p-3 shadow-xl backdrop-blur">
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
-          <ShoppingCart className="h-5 w-5" strokeWidth={2.4} />
+      <div className="flex items-start gap-3 border border-border/70 bg-background p-4 shadow-lg shadow-foreground/5">
+        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-accent/60 bg-secondary/60 text-primary">
+          <ShoppingCart className="h-4 w-4" strokeWidth={1.6} />
         </div>
         <div className="flex-1 text-xs leading-snug">
-          <p className="font-semibold text-foreground">
-            {current.name} de {current.location}
+          <p className="font-heading text-sm font-normal text-primary">
+            {current.name}, {current.location}
           </p>
-          <p className="mt-0.5 text-muted-foreground">
+          <p className="mt-0.5 font-light text-muted-foreground">
             acaba de obtener acceso al recetario
           </p>
-          <p className="mt-1 flex items-center gap-1 text-[11px] text-emerald-700">
-            <CheckCircle2 className="h-3 w-3" /> Compra verificada · hace {current.minutes} min
+          <p className="mt-1.5 flex items-center gap-1 text-[10px] font-light uppercase tracking-[0.18em] text-muted-foreground">
+            <CheckCircle2 className="h-3 w-3 text-primary" /> Verificada · hace {current.minutes} min
           </p>
         </div>
       </div>
