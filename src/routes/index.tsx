@@ -1010,7 +1010,7 @@ function Garantia() {
                 <ShieldCheck className="h-3.5 w-3.5" />
                 Compra protegida
               </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
                 <Lock className="h-3.5 w-3.5" />
                 100% seguro
               </span>
