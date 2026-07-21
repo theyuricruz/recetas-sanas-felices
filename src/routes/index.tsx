@@ -1263,32 +1263,34 @@ function Comparacion() {
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {/* Bad column */}
-          <div className="rounded-3xl border border-red-200/60 bg-red-50/40 p-6 sm:p-8">
-            <div className="flex items-center gap-3">
-              <span className="grid h-10 w-10 place-items-center rounded-full bg-red-100 text-xl">❌</span>
-              <h3 className="text-lg font-bold text-foreground">Dietas extremas</h3>
-            </div>
-            <ul className="mt-5 space-y-3">
+          <div className="border border-border/70 bg-secondary/30 p-8 sm:p-10">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-muted-foreground">
+              Antes
+            </span>
+            <h3 className="mt-3 font-heading text-2xl font-normal text-foreground">Dietas extremas</h3>
+            <div className="hairline mt-4" />
+            <ul className="mt-6 space-y-4">
               {malos.map((m) => (
                 <li key={m} className="flex items-start gap-3">
-                  <XCircle className="mt-0.5 h-5 w-5 shrink-0 text-red-500" strokeWidth={2.4} />
-                  <span className="text-sm leading-relaxed text-foreground/90">{m}</span>
+                  <span className="mt-2 h-px w-4 shrink-0 bg-muted-foreground/50" />
+                  <span className="text-sm font-light leading-relaxed text-muted-foreground">{m}</span>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Good column */}
-          <div className="rounded-3xl border border-emerald-200/60 bg-emerald-50/50 p-6 shadow-lg shadow-emerald-900/5 sm:p-8">
-            <div className="flex items-center gap-3">
-              <span className="grid h-10 w-10 place-items-center rounded-full bg-emerald-100 text-xl">✅</span>
-              <h3 className="text-lg font-bold text-foreground">Alimentación antiinflamatoria práctica</h3>
-            </div>
-            <ul className="mt-5 space-y-3">
+          <div className="border border-accent/60 bg-background p-8 shadow-sm sm:p-10">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-primary">
+              Después
+            </span>
+            <h3 className="mt-3 font-heading text-2xl font-normal text-primary">Alimentación antiinflamatoria práctica</h3>
+            <div className="hairline mt-4" />
+            <ul className="mt-6 space-y-4">
               {buenos.map((b) => (
                 <li key={b} className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" strokeWidth={2.4} />
-                  <span className="text-sm leading-relaxed text-foreground/90">{b}</span>
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" strokeWidth={1.6} />
+                  <span className="text-sm font-light leading-relaxed text-foreground">{b}</span>
                 </li>
               ))}
             </ul>
