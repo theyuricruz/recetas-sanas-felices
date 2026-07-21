@@ -1126,6 +1126,21 @@ function PreguntasFrecuentes() {
       answer:
         "No. Este material es educativo e informativo y no sustituye la orientación de un profesional de la salud. Antes de hacer cambios importantes en tu alimentación, consulta a un nutricionista o médico.",
     },
+    {
+      question: "¿Por qué el precio es tan accesible?",
+      answer:
+        "Porque es un producto 100% digital. No hay costos de envío, impresión, almacenamiento ni intermediarios. Todo el ahorro se traslada a ti. Además, queremos que TODAS las mujeres puedan acceder a alimentación antiinflamatoria, sin importar su presupuesto.",
+    },
+    {
+      question: "¿Los ingredientes se consiguen en mi país?",
+      answer:
+        "¡Sí! Las recetas utilizan ingredientes comunes disponibles en supermercados de toda América Latina. Evitamos ingredientes exóticos o difíciles de conseguir. Y si algo específico no se encuentra, el bono 'Manual S.O.S.' te enseña sustituciones perfectas.",
+    },
+    {
+      question: "¿Cuánto tiempo tengo acceso al material?",
+      answer:
+        "PARA SIEMPRE. Pagas una sola vez y el acceso es de por vida. Todas las actualizaciones y recetas nuevas que agreguemos también serán tuyas sin costo adicional. Es tuyo para siempre.",
+    },
   ];
 
   return (
