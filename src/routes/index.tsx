@@ -96,17 +96,116 @@ function Index() {
       <Hero />
       <DoloresComunes />
       <Comparacion />
+      <CtaAfterComparison />
       <QueRecibir />
-      
-      <Bonos />
-      <Oferta />
       <Ejemplos />
+      <Bonos />
+      <UrgencyBar />
+      <Oferta />
       <Testimonios />
       <Garantia />
       <PreguntasFrecuentes />
       <Footer />
       <PurchaseNotifications />
+      <StickyCta />
     </main>
+  );
+}
+
+function CtaAfterComparison() {
+  return (
+    <section className="px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto my-10 max-w-4xl rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 px-6 py-10 text-center shadow-xl">
+        <h2 className="text-2xl font-bold text-white sm:text-3xl">
+          Empieza a desinflamarte hoy
+        </h2>
+        <a
+          href="#oferta"
+          className="mt-6 inline-block rounded-full bg-white px-12 py-4 text-lg font-bold text-emerald-700 shadow-lg transition-transform hover:scale-105"
+        >
+          QUIERO MIS 1500 RECETAS →
+        </a>
+      </div>
+    </section>
+  );
+}
+
+function UrgencyBar() {
+  const [timeLeft, setTimeLeft] = useState(15 * 60);
+  const [viewers, setViewers] = useState(47);
+  const [weekday, setWeekday] = useState("");
+
+  useEffect(() => {
+    const days = ["DOMINGO", "LUNES", "MARTES", "MIÉRCOLES", "JUEVES", "VIERNES", "SÁBADO"];
+    setWeekday(days[new Date().getDay()]);
+
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => (prev <= 1 ? 15 * 60 : prev - 1));
+    }, 1000);
+    const viewersTimer = setInterval(() => {
+      setViewers(Math.floor(Math.random() * 31) + 35);
+    }, 8000);
+    return () => {
+      clearInterval(timer);
+      clearInterval(viewersTimer);
+    };
+  }, []);
+
+  const mm = String(Math.floor(timeLeft / 60)).padStart(2, "0");
+  const ss = String(timeLeft % 60).padStart(2, "0");
+
+  return (
+    <section className="px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto my-12 max-w-4xl rounded-xl border-[3px] border-yellow-400 bg-gradient-to-r from-red-600 to-red-700 p-6 text-center text-white shadow-2xl">
+        <h3 className="text-xl font-bold uppercase sm:text-2xl">
+          🔥 OFERTA ESPECIAL - SOLO HOY {weekday}
+        </h3>
+        <div className="my-5 rounded-lg bg-black/30 px-4 py-4">
+          <p className="text-sm">⏰ Esta oferta termina en:</p>
+          <p className="mt-1 font-mono text-3xl font-bold tabular-nums sm:text-4xl">
+            {mm}:{ss}
+          </p>
+        </div>
+        <div className="flex flex-wrap items-center justify-center gap-4">
+          <div className="rounded-lg bg-black/30 px-5 py-3 text-sm font-semibold">
+            👥 {viewers} personas viendo esto ahora
+          </div>
+          <div className="rounded-lg bg-black/30 px-5 py-3 text-sm font-semibold">
+            ⚠️ Últimas <span className="font-bold text-yellow-400">12</span> unidades con bonos
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function StickyCta() {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 600);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <div
+      className={`fixed inset-x-0 bottom-0 z-[9999] bg-gradient-to-r from-emerald-500 to-emerald-600 px-5 py-3 shadow-[0_-10px_30px_-5px_rgba(0,0,0,0.3)] transition-transform duration-300 ${
+        visible ? "translate-y-0" : "translate-y-full"
+      }`}
+    >
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 text-white">
+        <div className="min-w-0">
+          <p className="text-base font-bold leading-tight sm:text-lg">🎁 1500 Recetas + 7 Bonos Gratis</p>
+          <p className="text-xs opacity-90 sm:text-sm">Oferta termina hoy</p>
+        </div>
+        <a
+          href="#oferta"
+          className="whitespace-nowrap rounded-full bg-white px-8 py-3 text-sm font-bold text-emerald-700 shadow-lg sm:text-base"
+        >
+          COMPRAR AHORA - $5
+        </a>
+      </div>
+    </div>
   );
 }
 
