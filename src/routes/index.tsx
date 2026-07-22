@@ -186,20 +186,20 @@ function StickyCta() {
 
   return (
     <div
-      className={`fixed inset-x-0 bottom-0 z-[9999] border-t border-accent/40 bg-primary px-5 py-3 text-primary-foreground shadow-[0_-10px_30px_-10px_rgba(45,58,40,0.25)] transition-transform duration-500 ${
-        visible ? "translate-y-0" : "translate-y-full"
+      className={`fixed inset-x-3 bottom-3 z-[9999] rounded-xl border border-accent/40 bg-primary px-4 py-2 text-primary-foreground shadow-[0_8px_30px_-8px_rgba(45,58,40,0.35)] transition-transform duration-500 sm:inset-x-6 sm:bottom-4 ${
+        visible ? "translate-y-0" : "translate-y-[calc(100%+2rem)]"
       }`}
     >
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3">
+      <div className="mx-auto flex max-w-5xl items-center justify-between gap-3">
         <div className="min-w-0">
-          <p className="font-heading text-base leading-tight sm:text-lg">1500 recetas + 7 bonos incluidos</p>
-          <p className="text-[11px] uppercase tracking-[0.2em] text-primary-foreground/70">Oferta editorial · termina hoy</p>
+          <p className="font-heading text-sm leading-tight sm:text-base">1500 recetas + 7 bonos</p>
+          <p className="text-[9px] uppercase tracking-[0.18em] text-primary-foreground/70">Oferta · termina hoy</p>
         </div>
         <a
           href="#oferta"
-          className="whitespace-nowrap bg-primary-foreground px-8 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary transition-colors hover:bg-accent hover:text-foreground sm:text-sm"
+          className="whitespace-nowrap rounded-lg bg-primary-foreground px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-primary transition-colors hover:bg-accent hover:text-foreground sm:px-5 sm:text-xs"
         >
-          Obtener acceso — $5
+          Obtener acceso
         </a>
       </div>
     </div>
