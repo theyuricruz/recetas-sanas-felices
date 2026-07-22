@@ -502,29 +502,32 @@ function Bonos() {
           </p>
         </div>
 
-        <div className="mt-16 grid gap-y-12 gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-y-10 gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
           {bonuses.map((b, i) => (
-            <div key={b.title} className="flex flex-col gap-4">
-              <div className="overflow-hidden rounded-sm border border-accent/20 bg-background">
+            <div key={b.title} className="flex flex-col gap-3">
+              <div className="relative overflow-hidden rounded-sm border border-accent/20 bg-secondary/30">
                 <img
                   src={b.image}
                   alt={b.title}
                   width={800}
                   height={600}
                   loading="lazy"
-                  className="aspect-[4/3] w-full object-cover"
+                  className="aspect-[16/10] w-full object-cover opacity-90 mix-blend-multiply saturate-[0.85]"
                 />
+                {/* Fade overlay para harmonizar com a paleta sage/cream */}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-secondary/20 via-transparent to-secondary/60" />
+                <div className="pointer-events-none absolute inset-0 bg-[color:var(--color-secondary)]/15" />
               </div>
-              <span className="text-[11px] font-semibold tracking-[0.28em] text-accent">
+              <span className="mt-1 text-[10px] font-semibold tracking-[0.28em] text-accent">
                 {String(i + 1).padStart(2, "0")} /
               </span>
-              <h3 className="font-heading text-xl leading-snug text-foreground">
+              <h3 className="font-heading text-lg leading-snug text-foreground">
                 {b.title}
               </h3>
-              <p className="text-sm font-light leading-relaxed text-muted-foreground">
+              <p className="text-[13px] font-light leading-relaxed text-muted-foreground">
                 {b.desc}
               </p>
-              <p className="mt-1 text-[11px] uppercase tracking-[0.2em] text-primary">
+              <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-primary">
                 Valor <span className="text-red-600 line-through decoration-red-600 decoration-2">{b.value}</span> · incluido
               </p>
             </div>
