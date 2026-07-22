@@ -508,7 +508,7 @@ function Bonos() {
                 {b.desc}
               </p>
               <p className="mt-1 text-[11px] uppercase tracking-[0.2em] text-primary">
-                Valor <span className="line-through opacity-60">{b.value}</span> · incluido
+                Valor <span className="text-red-600 line-through decoration-red-600 decoration-2">{b.value}</span> · incluido
               </p>
             </div>
           ))}
