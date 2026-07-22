@@ -54,6 +54,13 @@ import desayuno from "@/assets/desayuno.jpg";
 import almuerzoCena from "@/assets/almuerzo-cena.jpg";
 import postres from "@/assets/postres.jpg";
 import bonos from "@/assets/bonos.jpg";
+import bono1 from "@/assets/bono-1.jpg";
+import bono2 from "@/assets/bono-2.jpg";
+import bono3 from "@/assets/bono-3.jpg";
+import bono4 from "@/assets/bono-4.jpg";
+import bono5 from "@/assets/bono-5.jpg";
+import bono6 from "@/assets/bono-6.jpg";
+import bono7 from "@/assets/bono-7.jpg";
 import realAlmuerzosCenas from "@/assets/real-almuerzos-cenas.png";
 import realQuesoHuevo from "@/assets/real-queso-huevo.png";
 import realTostada from "@/assets/real-tostada.png";
@@ -472,13 +479,13 @@ function QueRecibir() {
 
 function Bonos() {
   const bonuses = [
-    { icon: "📋", title: "Guía de Compra Inteligente", desc: "Lista organizada para no olvidar ingredientes antiinflamatorios", value: "$17", highlight: false },
-    { icon: "📅", title: "Tus Primeros 7 Días Paso a Paso", desc: "Plan simple para comenzar sin pensar qué cocinar", value: "$27", highlight: false },
-    { icon: "🔄", title: "Manual S.O.S. de Ingredientes", desc: "Sustituciones cuando falta UN ingrediente", value: "$17", highlight: false },
-    { icon: "🍰", title: "50 Postres Sin Culpa", desc: "Tortas, brownies y dulces antiinflamatorios", value: "$27", highlight: true },
-    { icon: "⚡", title: "Snacks Express en 5 Minutos", desc: "Para cuando no tienes tiempo ni ganas de cocinar", value: "$17", highlight: true },
-    { icon: "🥤", title: "Batidos Antiinflamatorios", desc: "30 combinaciones para energía natural", value: "$17", highlight: true },
-    { icon: "👨‍👩‍👧", title: "Recetas para Toda la Familia", desc: "Platos que gustan a niños y adultos exigentes", value: "$27", highlight: true },
+    { image: bono1, title: "Guía de Compra Inteligente", desc: "Lista organizada para no olvidar ingredientes antiinflamatorios", value: "$17" },
+    { image: bono2, title: "Tus Primeros 7 Días Paso a Paso", desc: "Plan simple para comenzar sin pensar qué cocinar", value: "$27" },
+    { image: bono3, title: "Manual S.O.S. de Ingredientes", desc: "Sustituciones cuando falta UN ingrediente", value: "$17" },
+    { image: bono4, title: "50 Postres Sin Culpa", desc: "Tortas, brownies y dulces antiinflamatorios", value: "$27" },
+    { image: bono5, title: "Snacks Express en 5 Minutos", desc: "Para cuando no tienes tiempo ni ganas de cocinar", value: "$17" },
+    { image: bono6, title: "Batidos Antiinflamatorios", desc: "30 combinaciones para energía natural", value: "$17" },
+    { image: bono7, title: "Recetas para Toda la Familia", desc: "Platos que gustan a niños y adultos exigentes", value: "$27" },
   ];
 
   return (
@@ -495,9 +502,19 @@ function Bonos() {
           </p>
         </div>
 
-        <div className="mt-16 grid gap-y-12 gap-x-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid gap-y-12 gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
           {bonuses.map((b, i) => (
-            <div key={b.title} className="flex flex-col gap-3">
+            <div key={b.title} className="flex flex-col gap-4">
+              <div className="overflow-hidden rounded-sm border border-accent/20 bg-background">
+                <img
+                  src={b.image}
+                  alt={b.title}
+                  width={800}
+                  height={600}
+                  loading="lazy"
+                  className="aspect-[4/3] w-full object-cover"
+                />
+              </div>
               <span className="text-[11px] font-semibold tracking-[0.28em] text-accent">
                 {String(i + 1).padStart(2, "0")} /
               </span>
